@@ -52,6 +52,21 @@
             </objects>
             <point key="canvasLocation" x="28.985507246376812" y="83.705357142857139"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="jyc-TZ-jNe">
+            <objects>
+                <viewController id="yUX-zz-BPz" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9SD-xA-TKf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="SLR-I1-N3G"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tTU-nb-SYJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="838" y="84"/>
+        </scene>
     </scenes>
     <resources>
         <image name="pendu" width="500" height="490"/>
