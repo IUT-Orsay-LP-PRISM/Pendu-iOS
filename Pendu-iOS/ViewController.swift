@@ -36,6 +36,12 @@ class ViewController: UIViewController {
         btn.layer.masksToBounds = false
     }
 
+    override func prepare(for segue: UIStoryboardSegue,sender: Any?){
+        if segue.identifier == "DeMenuVersJeu" {
+            // Definition du controler de destinatation
+            let destinationVC = segue.destination as! MenuController
+         }
+    }
 
 }
 

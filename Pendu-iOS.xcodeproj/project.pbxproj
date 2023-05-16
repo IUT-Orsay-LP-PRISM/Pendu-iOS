@@ -14,7 +14,8 @@
 		2183208A2A0A243500641938 /* Pendu_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 218320882A0A243500641938 /* Pendu_iOS.xcdatamodeld */; };
 		2183208C2A0A243700641938 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2183208B2A0A243700641938 /* Assets.xcassets */; };
 		2183208F2A0A243700641938 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2183208D2A0A243700641938 /* LaunchScreen.storyboard */; };
-		218320992A0A3EC000641938 /* DarumadropOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 218320972A0A3E9E00641938 /* DarumadropOne-Regular.ttf */; };
+		9929C08A2A13AA3000C06CD0 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9929C0892A13AA3000C06CD0 /* MenuController.swift */; };
+		9929C08D2A13AD5200C06CD0 /* DarumadropOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9929C08C2A13AD5200C06CD0 /* DarumadropOne-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +28,8 @@
 		2183208B2A0A243700641938 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2183208E2A0A243700641938 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		218320902A0A243700641938 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		218320972A0A3E9E00641938 /* DarumadropOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "DarumadropOne-Regular.ttf"; path = "../../../../Downloads/Darumadrop_One/DarumadropOne-Regular.ttf"; sourceTree = "<group>"; };
+		9929C0892A13AA3000C06CD0 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		9929C08C2A13AD5200C06CD0 /* DarumadropOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DarumadropOne-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +62,9 @@
 		2183207E2A0A243500641938 /* Pendu-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				218320962A0A3E8600641938 /* fonts */,
+				9929C08B2A13AD1000C06CD0 /* font */,
 				2183207F2A0A243500641938 /* AppDelegate.swift */,
+				9929C0892A13AA3000C06CD0 /* MenuController.swift */,
 				218320812A0A243500641938 /* SceneDelegate.swift */,
 				218320832A0A243500641938 /* ViewController.swift */,
 				218320852A0A243500641938 /* Main.storyboard */,
@@ -73,12 +76,12 @@
 			path = "Pendu-iOS";
 			sourceTree = "<group>";
 		};
-		218320962A0A3E8600641938 /* fonts */ = {
+		9929C08B2A13AD1000C06CD0 /* font */ = {
 			isa = PBXGroup;
 			children = (
-				218320972A0A3E9E00641938 /* DarumadropOne-Regular.ttf */,
+				9929C08C2A13AD5200C06CD0 /* DarumadropOne-Regular.ttf */,
 			);
-			path = fonts;
+			path = font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,7 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2183208F2A0A243700641938 /* LaunchScreen.storyboard in Resources */,
-				218320992A0A3EC000641938 /* DarumadropOne-Regular.ttf in Resources */,
+				9929C08D2A13AD5200C06CD0 /* DarumadropOne-Regular.ttf in Resources */,
 				2183208C2A0A243700641938 /* Assets.xcassets in Resources */,
 				218320872A0A243500641938 /* Main.storyboard in Resources */,
 			);
@@ -153,6 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9929C08A2A13AA3000C06CD0 /* MenuController.swift in Sources */,
 				2183208A2A0A243500641938 /* Pendu_iOS.xcdatamodeld in Sources */,
 				218320842A0A243500641938 /* ViewController.swift in Sources */,
 				218320802A0A243500641938 /* AppDelegate.swift in Sources */,
