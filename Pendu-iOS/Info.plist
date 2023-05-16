@@ -4,7 +4,7 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>DarumadropOne-Regular.ttf</string>
+		<string>font/DarumadropOne-Regular.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
