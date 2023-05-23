@@ -11,7 +11,7 @@ class JeuController: UIViewController {
     @IBOutlet weak var penduImg: UIImageView!
     @IBOutlet weak var word: UILabel!
     @IBOutlet weak var textLost: UILabel!
-    var wordChosen: String = "coiffeur"
+    var wordChosen: String = "mathieu"
     var arrayOfWord: [String] = []
     var arrayOfSoluce: [String] = []
     var nbTry: Int = 10
@@ -31,10 +31,7 @@ class JeuController: UIViewController {
             arrayOfWord.append(String(char))
             arrayOfSoluce.append("_")
         }
-        
-        for letter in arrayOfSoluce{
-            word.text! += letter
-        }
+        updateLabelSoluce()
         
         print("Tableau mot solution :")
         print(arrayOfWord)
@@ -43,40 +40,39 @@ class JeuController: UIViewController {
     }
     
     @IBAction func onClickBtn(_ sender: UIButton) {
-        // On récupère la valeur du bouton et on la lowercase
         var btnTitle = sender.titleLabel?.text ?? ""
         btnTitle = btnTitle.lowercased()
-        var counterArray: Int = 0
-        
-        // ici que va se jouer la logique :
-        // onClick, on récupère le btnTitle
-        // si le btnTitle est égale à n'importe qu'elle être du mot
-        // ça veut dire que c'est bon du coup le compteur ne bouge pas
+        var status = false;
         
         for (index, element) in arrayOfWord.enumerated(){
-            // On parcours chaque lettre
-            print(String(index) + " - " + element)
-            
+            if (element == btnTitle){
+                arrayOfSoluce[index] = btnTitle.uppercased()
+                updateLabelSoluce()
+                sender.isEnabled = false;
+                status = true;
+            }
         }
 
-        /*
-         if (letter == btnTitle){
-             print(arrayOfWord[counterArray])
-             counterArray += 1
-         } else {
-             counter += 1;
-             sender.isEnabled = false;
-                 
-             if (counter >= nbTry){
-                 changeImg(nbr:counter);
-                 textLost.text = "PERDU !";
-             } else {
-                 changeImg(nbr:counter);
-             }
-             break;
-         }
-         
-         */
+        if (!status){
+            counter += 1;
+            sender.isEnabled = false;
+                
+            if (counter >= nbTry){
+                changeImg(nbr:counter);
+                textLost.text = "PERDU !";
+            } else {
+                changeImg(nbr:counter);
+            }
+        }
+        
+        
+    }
+    
+    func updateLabelSoluce(){
+        word.text! = ""
+        for letter in arrayOfSoluce{
+            word.text! += letter
+        }
     }
     
     
