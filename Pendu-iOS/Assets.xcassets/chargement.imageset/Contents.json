@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "5coup.png",
+      "filename" : "chargement.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "5coup-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "5coup-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
