@@ -11,6 +11,14 @@ class JeuController: UIViewController {
     @IBOutlet weak var penduImg: UIImageView!
     @IBOutlet weak var word: UILabel!
     @IBOutlet weak var textLost: UILabel!
+    @IBOutlet weak var counterLbl: UILabel!
+    
+    var counterMinutes = 0
+    var counterSeconds = 0
+    var counterMiliseconds = 0
+    var countDirection = "Down"
+    var maxCounter = 5
+    var counterTimer: Timer? = nil
     
     var wordChosen: String = "coiffeur"
     
@@ -21,6 +29,14 @@ class JeuController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if(countDirection == "Down"){
+            counterSeconds = maxCounter;
+        }
+        else{
+            counterSeconds = 0;
+        }
+        counterLbl.text = String(counterSeconds);
         
         for char in wordChosen{
             arrayOfWord.append(String(char))
@@ -37,6 +53,9 @@ class JeuController: UIViewController {
         var status = false;
         var ended = false;
 
+        if(counterTimer == nil){
+            startTimer();
+        }
         
         for (index, element) in arrayOfWord.enumerated(){
             if (element == btnTitle){
@@ -81,6 +100,42 @@ class JeuController: UIViewController {
         }
         else{
             penduImg.image = UIImage(named: "pendu")
+        }
+    }
+    
+    func startTimer(){
+        counterTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateSecondsLblCounter), userInfo: nil, repeats: true)
+    }
+    
+    func timeIsOut(){
+        //Ends the game when the timer runs out
+        print("Timer ended")
+        endGame();
+    }
+    
+    func endGame(){
+        print("Game Ended");
+        counterTimer?.invalidate();
+    }
+    
+    @objc func updateSecondsLblCounter() {
+        //example functionality
+        if(countDirection == "Up"){
+            counterSeconds += 1;
+            counterLbl.text = String(counterSeconds);
+        }
+        else if(countDirection == "Down"){
+            if(counterSeconds > 0){
+                counterSeconds -= 1;
+                counterLbl.text = String(counterSeconds);
+            }
+            else{
+                timeIsOut();
+                return;
+            }
+        }
+        else{
+            print("Bad value for var countDirection");
         }
     }
 

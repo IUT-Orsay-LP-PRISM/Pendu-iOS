@@ -608,12 +608,20 @@
                                 <color key="textColor" systemColor="systemPinkColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FRb-eF-kX6">
+                                <rect key="frame" x="330" y="65" width="64" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DarumadropOne-Regular" family="Darumadrop One" pointSize="31"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bpq-aG-UMH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="RTt-3b-C2e"/>
                     <connections>
+                        <outlet property="counterLbl" destination="FRb-eF-kX6" id="nuM-gN-WUI"/>
                         <outlet property="penduImg" destination="SfS-ic-I2B" id="8Kz-1U-puU"/>
                         <outlet property="textLost" destination="wEp-rM-7sz" id="EfI-Xv-K24"/>
                         <outlet property="word" destination="FPG-4S-MGH" id="J9G-cU-X46"/>
