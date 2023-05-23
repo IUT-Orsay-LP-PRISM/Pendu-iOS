@@ -10,7 +10,7 @@ import UIKit
 class JeuController: UIViewController {
     @IBOutlet weak var penduImg: UIImageView!
     @IBOutlet weak var word: UILabel!
-    @IBOutlet weak var textLost: UILabel!
+    @IBOutlet weak var textAction: UILabel!
     @IBOutlet weak var counterLbl: UILabel!
     
     var counterMinutes = 0
@@ -51,8 +51,7 @@ class JeuController: UIViewController {
         var btnTitle = sender.titleLabel?.text ?? ""
         btnTitle = btnTitle.lowercased()
         var status = false;
-        var ended = false;
-
+        
         if(counterTimer == nil){
             startTimer();
         }
@@ -72,7 +71,7 @@ class JeuController: UIViewController {
 
             if (counter >= nbTry){
                 changeImg(nbr:counter);
-                textLost.text = "PERDU !";
+                textAction.text = "PERDU !";
             } else {
                 changeImg(nbr:counter);
             }
@@ -89,7 +88,9 @@ class JeuController: UIViewController {
             }
         }
         if (tab.isEmpty){
-            print("gagné")
+            let text = "gagné !"
+            textAction.textColor = UIColor.systemGreen
+            textAction.text = text.uppercased()
         }
     }
     

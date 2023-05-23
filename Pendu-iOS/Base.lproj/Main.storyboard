@@ -623,7 +623,7 @@
                     <connections>
                         <outlet property="counterLbl" destination="FRb-eF-kX6" id="nuM-gN-WUI"/>
                         <outlet property="penduImg" destination="SfS-ic-I2B" id="8Kz-1U-puU"/>
-                        <outlet property="textLost" destination="wEp-rM-7sz" id="EfI-Xv-K24"/>
+                        <outlet property="textAction" destination="wEp-rM-7sz" id="8tI-BU-ZOu"/>
                         <outlet property="word" destination="FPG-4S-MGH" id="J9G-cU-X46"/>
                     </connections>
                 </viewController>
