@@ -9,12 +9,29 @@ import UIKit
 
 class MenuController: UIViewController {
     var nbrErreur = 0
+    var counterMinutes = 0
+    var counterSeconds = 0
+    var counterMiliseconds = 0
+    var countDirection = "Up"
+    var maxCounter = 20
+    var counterTimer: Timer? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         nbrErreur = 0
+        if(countDirection == "Down"){
+            counterSeconds = maxCounter;
+        }
+        else{
+            counterSeconds = 0;
+        }
+        counterLbl.text = String(counterSeconds);
         // Do any additional setup after loading the view.
     }
     
+    
+    
+    @IBOutlet weak var counterLbl: UILabel!
     @IBOutlet weak var penduImg: UIImageView!
     @IBOutlet weak var triesLbl: UILabel!
     @IBOutlet weak var incrementBtn: UIButton!
@@ -23,12 +40,21 @@ class MenuController: UIViewController {
         changeImg(nbr:nbrErreur);
         triesLeft(nbr:nbrErreur);
     }
+    
+    func startTimer(){
+        counterTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateSecondsLblCounter), userInfo: nil, repeats: true)
+    }
+    
     func changeImg(nbr:Int){
+        if(counterTimer == nil){
+            startTimer();
+        }
         if(nbr != 10){
-            penduImg.image = UIImage(named: String(nbr+1)+"coup")
+            penduImg.image = UIImage(named: String(nbr+1)+"coup");
         }
         else{
-            penduImg.image = UIImage(named: "pendu")
+            penduImg.image = UIImage(named: "pendu");
+            endGame();
         }
     }
     
@@ -41,11 +67,41 @@ class MenuController: UIViewController {
         else{
             triesLbl.text = "Aucunes tentatives restantes";
             incrementBtn.isEnabled = false;
-            
         }
-        
-        
     }
+    
+    func timeIsOut(){
+        //Ends the game when the timer runs out
+        print("Timer ended")
+        endGame();
+    }
+    
+    func endGame(){
+        print("Game Ended");
+        counterTimer?.invalidate();
+    }
+    
+    @objc func updateSecondsLblCounter() {
+        //example functionality
+        if(countDirection == "Up"){
+            counterSeconds += 1;
+            counterLbl.text = String(counterSeconds);
+        }
+        else if(countDirection == "Down"){
+            if(counterSeconds > 0){
+                counterSeconds -= 1;
+                counterLbl.text = String(counterSeconds);
+            }
+            else{
+                timeIsOut();
+                return;
+            }
+        }
+        else{
+            print("Bad value for var countDirection");
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

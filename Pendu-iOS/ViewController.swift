@@ -15,11 +15,13 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var playBtn: UIButton!
     @IBOutlet weak var rulesBtn: UIButton!
+    @IBOutlet weak var customBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         addStyleToBtn(btn: playBtn, revert: false)
+        addStyleToBtn(btn: customBtn, revert: false)
         addStyleToBtn(btn: rulesBtn, revert: true)
         
     }

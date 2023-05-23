@@ -21,26 +21,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" role="primary" translatesAutoresizingMaskIntoConstraints="NO" id="qOv-l6-nKW">
-                                <rect key="frame" x="49" y="596" width="316" height="62"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <size key="titleShadowOffset" width="7" height="7"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="JOUER" titleAlignment="center">
-                                    <fontDescription key="titleFontDescription" name="DarumadropOne-Regular" family="Darumadrop One" pointSize="30"/>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="baseBackgroundColor" red="0.346008867" green="0.33545207980000002" blue="0.84008985759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </buttonConfiguration>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PENDIX_" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7t-Ej-FYr">
-                                <rect key="frame" x="49" y="78" width="316" height="116"/>
+                                <rect key="frame" x="49" y="42" width="316" height="116"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="DarumadropOne-Regular" family="Darumadrop One" pointSize="80"/>
                                 <color key="textColor" systemColor="systemIndigoColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pendu" translatesAutoresizingMaskIntoConstraints="NO" id="ScM-pi-wSt">
-                                <rect key="frame" x="61" y="259" width="292" height="262"/>
+                                <rect key="frame" x="61" y="166" width="292" height="262"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eJd-E8-ugJ">
@@ -56,7 +45,18 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" role="primary" translatesAutoresizingMaskIntoConstraints="NO" id="YM7-2N-yo5">
-                                <rect key="frame" x="49" y="596" width="316" height="62"/>
+                                <rect key="frame" x="49" y="501" width="316" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <size key="titleShadowOffset" width="7" height="7"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="JOUER" titleAlignment="center">
+                                    <fontDescription key="titleFontDescription" name="DarumadropOne-Regular" family="Darumadrop One" pointSize="30"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" red="0.346008867" green="0.33545207980000002" blue="0.84008985759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" role="primary" translatesAutoresizingMaskIntoConstraints="NO" id="laW-fT-P76">
+                                <rect key="frame" x="49" y="501" width="316" height="62"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <size key="titleShadowOffset" width="7" height="7"/>
                                 <state key="normal" title="Button"/>
@@ -66,8 +66,30 @@
                                     <color key="baseBackgroundColor" red="0.346008867" green="0.33545207980000002" blue="0.84008985759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="yUX-zz-BPz" kind="show" identifier="DeMenuVersJeu" id="LoJ-WP-W1J"/>
+                                    <segue destination="yUX-zz-BPz" kind="show" identifier="DeMenuVersJeu" id="Rmk-vr-n4N"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" role="primary" translatesAutoresizingMaskIntoConstraints="NO" id="2Hg-G7-PXZ">
+                                <rect key="frame" x="46" y="602" width="323" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <size key="titleShadowOffset" width="7" height="7"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="PARTIE PERSONALISEE" titleAlignment="center">
+                                    <fontDescription key="titleFontDescription" name="DarumadropOne-Regular" family="Darumadrop One" pointSize="30"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" red="0.346008867" green="0.33545207980000002" blue="0.84008985759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" role="primary" translatesAutoresizingMaskIntoConstraints="NO" id="qOv-l6-nKW">
+                                <rect key="frame" x="46" y="602" width="323" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <size key="titleShadowOffset" width="7" height="7"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="PARTIE PERSONALISEE" titleAlignment="center">
+                                    <fontDescription key="titleFontDescription" name="DarumadropOne-Regular" family="Darumadrop One" pointSize="30"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" red="0.346008867" green="0.33545207980000002" blue="0.84008985759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -76,7 +98,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="rUt-Ox-dwX"/>
                     <connections>
-                        <outlet property="playBtn" destination="qOv-l6-nKW" id="snn-5y-Dhl"/>
+                        <outlet property="customBtn" destination="2Hg-G7-PXZ" id="KeL-xB-d4M"/>
+                        <outlet property="playBtn" destination="laW-fT-P76" id="R4o-sN-RJm"/>
                         <outlet property="rulesBtn" destination="eJd-E8-ugJ" id="8lU-oF-UI5"/>
                     </connections>
                 </viewController>
@@ -124,12 +147,20 @@
                                     <action selector="incrementAction:" destination="yUX-zz-BPz" eventType="touchUpInside" id="g08-Gn-4Z4"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rXQ-y2-Lv7">
+                                <rect key="frame" x="330" y="61" width="64" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DarumadropOne-Regular" family="Darumadrop One" pointSize="31"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="SLR-I1-N3G"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="vJ9-RC-Ue2"/>
                     <connections>
+                        <outlet property="counterLbl" destination="rXQ-y2-Lv7" id="dKm-ki-fxv"/>
                         <outlet property="incrementBtn" destination="c2H-us-YmX" id="fx8-lk-h4E"/>
                         <outlet property="penduImg" destination="GGo-ec-sj2" id="qzs-Iz-jSs"/>
                         <outlet property="triesLbl" destination="dex-z0-1aF" id="gDA-b3-C72"/>
@@ -137,7 +168,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tTU-nb-SYJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1884" y="-376"/>
+            <point key="canvasLocation" x="1882.608695652174" y="-376.33928571428572"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="GRZ-Tx-dc5">
+            <objects>
+                <viewController id="azn-hQ-PMo" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="J2D-9T-QpI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="9Oe-Lq-rEu"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hnP-np-yhH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="940" y="745"/>
         </scene>
         <!--Jeu Controller-->
         <scene sceneID="6BS-oD-x4d">
@@ -597,8 +643,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="1coup" width="499" height="489"/>
-        <image name="pendu" width="500" height="490"/>
+        <image name="1coup" width="249.5" height="244.5"/>
+        <image name="pendu" width="250" height="245"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
