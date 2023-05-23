@@ -63,7 +63,14 @@ class JeuController: UIViewController {
     }
     
     func checkIfWin(){
+        var tab: [String] = []
         for element in arrayOfSoluce{
+            if (element == "_"){
+                tab.append(element)
+            }
+        }
+        if (tab.isEmpty){
+            print("gagné")
         }
     }
     
