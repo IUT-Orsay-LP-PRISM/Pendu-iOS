@@ -16,11 +16,12 @@ class JeuController: UIViewController {
     @IBOutlet weak var textWordEnd: UILabel!
     @IBOutlet weak var btnRetry: UIButton!
     
-    var counterMinutes = 0
-    var counterSeconds = 0
-    var counterMiliseconds = 0
-    var countDirection = "Down"
-    var maxCounter = 5
+    var counterMinutes = 0;
+    var counterSeconds = 0;
+    var totalSeconds = 0;
+    //var counterMiliseconds = 0;
+    var countDirection = "Up"
+    var maxCounterSeconds = 10
     var counterTimer: Timer? = nil
     var buttons = [UIButton]()
     
@@ -41,12 +42,13 @@ class JeuController: UIViewController {
         }
         
         if(countDirection == "Down"){
-            counterSeconds = maxCounter;
+            counterMinutes = maxCounterSeconds / 60;
+            counterSeconds = maxCounterSeconds % 60;
         }
         else{
             counterSeconds = 0;
         }
-        counterLbl.text = String(counterSeconds);
+        counterLbl.text = "Timer : "+String(counterMinutes)+"m"+String(counterSeconds)+"s";
         textEnd.text = ""
         textWordEnd.text = "";
         textAction.text = ""
@@ -109,16 +111,7 @@ class JeuController: UIViewController {
             }
         }
         if (tab.isEmpty){
-            let text = "Vous avez GAGNÉ !"
-            textAction.text = text
-            textEnd.text = "Nombre d'erreurs :"
-            textWordEnd.text = String(counter)
-            btnRetry.layer.opacity = 1
-            textAction.textColor = UIColor.systemGreen
-            for button in buttons{
-                button.removeFromSuperview()
-            }
-
+            gameWon();
         }
     }
     
@@ -146,34 +139,71 @@ class JeuController: UIViewController {
     func timeIsOut(){
         //Ends the game when the timer runs out
         print("Timer ended")
-        endGame();
+        gameOver();
     }
     
-    func endGame(){
-        print("Game Ended");
+    func gameWon(){
         counterTimer?.invalidate();
+        let text = "Vous avez GAGNÉ !"
+        textAction.text = text
+        textEnd.text = "Nombre d'erreurs :"
+        textWordEnd.text = String(counter)
+        btnRetry.layer.opacity = 1
+        textAction.textColor = UIColor.systemGreen
+        for button in buttons{
+            button.removeFromSuperview()
+        }
+    }
+    
+    func gameOver(){
+        counterTimer?.invalidate();
+        changeImg(nbr:nbTry);
+        textAction.text = "Vous avez PERDU !";
+        textEnd.text = "Le mot était : ";
+        textWordEnd.text = wordChosen.uppercased();
+        removeAllButtons();
     }
     
     @objc func updateSecondsLblCounter() {
-        //example functionality
-        if(countDirection == "Up"){
-            counterSeconds += 1;
-            counterLbl.text = String(counterSeconds);
-        }
-        else if(countDirection == "Down"){
-            if(counterSeconds > 0){
-                counterSeconds -= 1;
-                counterLbl.text = String(counterSeconds);
+            if(countDirection == "Up"){
+                if(counterSeconds < 60){
+                    counterSeconds += 1;
+                }
+                else{
+                    counterSeconds = 0;
+                    counterMinutes += 1;
+                }
+                counterLbl.text = "Timer  : "+String(counterMinutes)+"m"+String(counterSeconds)+"s";
+            }
+            else if(countDirection == "Down"){
+                totalSeconds = (counterMinutes * 60) + counterSeconds;
+                if(totalSeconds != 0){
+                    if(counterSeconds > 0){
+                        counterSeconds -= 1;
+                            totalSeconds = (counterMinutes * 60) + counterSeconds;
+                        if(totalSeconds == 0){
+                            timeIsOut();
+                        }
+                    }
+                    else{
+                        counterSeconds = 60;
+                        counterMinutes -= 1;
+                    }
+                    counterLbl.text = "Timer : "+String(counterMinutes)+"m"+String(counterSeconds)+"s ";
+                }
+                else{
+                    timeIsOut();
+                }
             }
             else{
-                timeIsOut();
-                return;
+                print("Bad value for var countDirection");
             }
         }
-        else{
-            print("Bad value for var countDirection");
+        func removeAllButtons(){
+            for button in buttons{
+                button.removeFromSuperview()
+            }
         }
-    }
 
     func addStyleToBtn(btn: UIButton, revert: Bool){
         btn.layer.shadowColor = UIColor.systemYellow.cgColor
