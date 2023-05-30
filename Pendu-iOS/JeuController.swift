@@ -25,7 +25,7 @@ class JeuController: UIViewController {
     var counterTimer: Timer? = nil
     var buttons = [UIButton]()
     
-    let wordChosen = ""
+    var wordChosen = ""
     
     var arrayOfWord: [String] = []
     var arrayOfSoluce: [String] = []
@@ -56,7 +56,7 @@ class JeuController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let wordChosen: String = readJSONFile()
+        wordChosen = readJSONFile()
         
         
         for subview in view.subviews {
@@ -86,8 +86,14 @@ class JeuController: UIViewController {
         updateLabelSoluce()
     }
     
-    func startGame(){
-        
+    @IBAction func startGame(){
+        /* if(btnRetry. == "DÉMARRER"){
+            
+        }
+        else if(btnRetry.text == "REDÉMARRER"){
+            
+        }*/
+                
     }
     
     @IBAction func onClickBtn(_ sender: UIButton) {
@@ -114,13 +120,7 @@ class JeuController: UIViewController {
             sender.removeFromSuperview()
 
             if (counter >= nbTry){
-                changeImg(nbr:counter);
-                textAction.text = "Vous avez PERDU !"
-                textEnd.text = "Le mot était : "
-                textWordEnd.text = wordChosen.uppercased()
-                for button in buttons{
-                    button.removeFromSuperview()
-                }
+                gameOver();
             } else {
                 changeImg(nbr:counter);
             }
@@ -227,9 +227,15 @@ class JeuController: UIViewController {
         }
         func removeAllButtons(){
             for button in buttons{
-                button.removeFromSuperview()
+                button.isHidden = true;
             }
         }
+    
+    func showAllButtons(){
+        for button in buttons{
+            button.isHidden = false;
+        }
+    }
 
     func addStyleToBtn(btn: UIButton, revert: Bool){
         btn.layer.shadowColor = UIColor.systemYellow.cgColor
@@ -241,6 +247,36 @@ class JeuController: UIViewController {
         btn.layer.shadowOpacity = 1
         btn.layer.cornerRadius = 0.0
         btn.layer.masksToBounds = false
+    }
+    
+    func restart(){
+        wordChosen = readJSONFile()
+        
+        for subview in view.subviews {
+            if let button = subview as? UIButton{
+                buttons.append(button)
+            }
+        }
+        
+        if(countDirection == "Down"){
+            counterMinutes = maxCounterSeconds / 60;
+            counterSeconds = maxCounterSeconds % 60;
+        }
+        else{
+            counterSeconds = 0;
+        }
+        counterLbl.text = "Timer : "+String(counterMinutes)+"m"+String(counterSeconds)+"s";
+        textEnd.text = ""
+        textWordEnd.text = "";
+        textAction.text = ""
+        
+        for char in wordChosen{
+            arrayOfWord.append(String(char))
+            arrayOfSoluce.append("_")
+        }
+        print(arrayOfWord)
+        print(arrayOfSoluce)
+        updateLabelSoluce()
     }
     
 }
