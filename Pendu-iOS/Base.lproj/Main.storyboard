@@ -591,15 +591,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="_" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FPG-4S-MGH">
-                                <rect key="frame" x="17" y="455" width="381" height="65"/>
+                                <rect key="frame" x="17" y="434" width="381" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="DarumadropOne-Regular" family="Darumadrop One" pointSize="47"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1coup" translatesAutoresizingMaskIntoConstraints="NO" id="SfS-ic-I2B">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1coup" translatesAutoresizingMaskIntoConstraints="NO" id="SfS-ic-I2B">
                                 <rect key="frame" x="70" y="139" width="274" height="249"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="274" id="NWA-EU-u4k"/>
+                                    <constraint firstAttribute="height" constant="249" id="Sp9-GE-sBA"/>
+                                    <constraint firstAttribute="width" constant="274" id="ZFy-d1-148"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FRb-eF-kX6">
                                 <rect key="frame" x="330" y="65" width="64" height="45"/>
@@ -609,21 +613,51 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wEp-rM-7sz">
-                                <rect key="frame" x="24" y="416" width="374" height="65"/>
+                                <rect key="frame" x="17" y="506" width="374" height="105"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="DarumadropOne-Regular" family="Darumadrop One" pointSize="44"/>
+                                <fontDescription key="fontDescription" name="DarumadropOne-Regular" family="Darumadrop One" pointSize="42"/>
                                 <color key="textColor" systemColor="systemPinkColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Le mot était :" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m7Y-Ya-Ezn">
+                                <rect key="frame" x="37" y="619" width="340" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DarumadropOne-Regular" family="Darumadrop One" pointSize="33"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mot choisi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4oA-5m-Njp">
+                                <rect key="frame" x="40" y="669" width="340" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DarumadropOne-Regular" family="Darumadrop One" pointSize="42"/>
+                                <color key="textColor" systemColor="systemIndigoColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S78-DQ-dOX">
+                                <rect key="frame" x="71" y="757" width="279" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="RECOMMENCER">
+                                    <fontDescription key="titleFontDescription" name="DarumadropOne-Regular" family="Darumadrop One" pointSize="30"/>
+                                    <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
+                                </buttonConfiguration>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bpq-aG-UMH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="SfS-ic-I2B" firstAttribute="leading" secondItem="bpq-aG-UMH" secondAttribute="leading" constant="70" id="383-Um-xPT"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="SfS-ic-I2B" secondAttribute="bottom" constant="474" id="TEI-J0-4sS"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="RTt-3b-C2e"/>
                     <connections>
+                        <outlet property="btnRetry" destination="S78-DQ-dOX" id="ZqY-R3-kw2"/>
                         <outlet property="counterLbl" destination="FRb-eF-kX6" id="nuM-gN-WUI"/>
                         <outlet property="penduImg" destination="SfS-ic-I2B" id="8Kz-1U-puU"/>
                         <outlet property="textAction" destination="wEp-rM-7sz" id="8tI-BU-ZOu"/>
+                        <outlet property="textEnd" destination="m7Y-Ya-Ezn" id="sWd-aN-hEf"/>
+                        <outlet property="textWordEnd" destination="4oA-5m-Njp" id="4Ci-SD-MMx"/>
                         <outlet property="word" destination="FPG-4S-MGH" id="J9G-cU-X46"/>
                     </connections>
                 </viewController>

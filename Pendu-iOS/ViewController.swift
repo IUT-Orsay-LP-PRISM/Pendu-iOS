@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
         addStyleToBtn(btn: playBtn, revert: false)
         addStyleToBtn(btn: customBtn, revert: false)
         addStyleToBtn(btn: rulesBtn, revert: true)

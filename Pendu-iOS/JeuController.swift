@@ -12,6 +12,9 @@ class JeuController: UIViewController {
     @IBOutlet weak var word: UILabel!
     @IBOutlet weak var textAction: UILabel!
     @IBOutlet weak var counterLbl: UILabel!
+    @IBOutlet weak var textEnd: UILabel!
+    @IBOutlet weak var textWordEnd: UILabel!
+    @IBOutlet weak var btnRetry: UIButton!
     
     var counterMinutes = 0
     var counterSeconds = 0
@@ -19,6 +22,7 @@ class JeuController: UIViewController {
     var countDirection = "Down"
     var maxCounter = 5
     var counterTimer: Timer? = nil
+    var buttons = [UIButton]()
     
     var wordChosen: String = "coiffeur"
     
@@ -30,6 +34,12 @@ class JeuController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        for subview in view.subviews {
+            if let button = subview as? UIButton{
+                buttons.append(button)
+            }
+        }
+        
         if(countDirection == "Down"){
             counterSeconds = maxCounter;
         }
@@ -37,8 +47,11 @@ class JeuController: UIViewController {
             counterSeconds = 0;
         }
         counterLbl.text = String(counterSeconds);
-        textAction.text = "";
-        
+        textEnd.text = ""
+        textWordEnd.text = "";
+        textAction.text = ""
+        btnRetry.layer.opacity = 0
+
         for char in wordChosen{
             arrayOfWord.append(String(char))
             arrayOfSoluce.append("_")
@@ -56,6 +69,7 @@ class JeuController: UIViewController {
         if(counterTimer == nil){
             startTimer();
         }
+
         
         for (index, element) in arrayOfWord.enumerated(){
             if (element == btnTitle){
@@ -71,8 +85,14 @@ class JeuController: UIViewController {
             sender.removeFromSuperview()
 
             if (counter >= nbTry){
+                btnRetry.layer.opacity = 0.5
                 changeImg(nbr:counter);
-                textAction.text = "PERDU !";
+                textAction.text = "Vous avez PERDU !"
+                textEnd.text = "Le mot était : "
+                textWordEnd.text = wordChosen.uppercased()
+                for button in buttons{
+                    button.removeFromSuperview()
+                }
             } else {
                 changeImg(nbr:counter);
             }
@@ -89,9 +109,16 @@ class JeuController: UIViewController {
             }
         }
         if (tab.isEmpty){
-            let text = "gagné !"
+            let text = "Vous avez GAGNÉ !"
+            textAction.text = text
+            textEnd.text = "Nombre d'erreurs :"
+            textWordEnd.text = String(counter)
+            btnRetry.layer.opacity = 1
             textAction.textColor = UIColor.systemGreen
-            textAction.text = text.uppercased()
+            for button in buttons{
+                button.removeFromSuperview()
+            }
+
         }
     }
     
@@ -148,4 +175,16 @@ class JeuController: UIViewController {
         }
     }
 
+    func addStyleToBtn(btn: UIButton, revert: Bool){
+        btn.layer.shadowColor = UIColor.systemYellow.cgColor
+        if (revert){
+            btn.layer.shadowColor = UIColor.lightIndigo.cgColor
+        }
+        btn.layer.shadowOffset = CGSize(width: 4.0, height: 6.0)
+        btn.layer.shadowRadius = 0
+        btn.layer.shadowOpacity = 1
+        btn.layer.cornerRadius = 0.0
+        btn.layer.masksToBounds = false
+    }
+    
 }
