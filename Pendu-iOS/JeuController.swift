@@ -37,6 +37,7 @@ class JeuController: UIViewController {
             counterSeconds = 0;
         }
         counterLbl.text = String(counterSeconds);
+        textAction.text = "";
         
         for char in wordChosen{
             arrayOfWord.append(String(char))
