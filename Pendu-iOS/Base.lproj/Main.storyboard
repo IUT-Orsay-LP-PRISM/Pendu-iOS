@@ -310,7 +310,7 @@
                                     <color key="baseForegroundColor" systemColor="systemBackgroundColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="onClickBtn:" destination="8sA-P9-DSy" eventType="touchUpInside" id="9KF-bJ-TfW"/>
+                                    <action selector="onClickBtn:" destination="8sA-P9-DSy" eventType="touchUpInside" id="Qgw-ej-lbt"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qxQ-q9-geX">
