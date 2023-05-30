@@ -13,8 +13,8 @@ class MenuController: UIViewController {
     var counterSeconds = 0;
     var totalSeconds = 0;
     //var counterMiliseconds = 0;
-    var countDirection = "Down";
-    var maxCounterSeconds = 80;
+    var countDirection = "Up";
+    var maxCounterSeconds = 20;
     var counterTimer: Timer? = nil;
     
     override func viewDidLoad() {
@@ -108,7 +108,7 @@ class MenuController: UIViewController {
                     counterSeconds = 60;
                     counterMinutes -= 1;
                 }
-                counterLbl.text = "Timer : "+String(counterMinutes)+"m"+String(counterSeconds)+"s "+String(totalSeconds);
+                counterLbl.text = "Timer : "+String(counterMinutes)+"m"+String(counterSeconds)+"s ";
             }
             else{
                 timeIsOut();
