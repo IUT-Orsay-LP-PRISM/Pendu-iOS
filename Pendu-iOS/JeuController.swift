@@ -12,32 +12,70 @@ class JeuController: UIViewController {
     @IBOutlet weak var word: UILabel!
     @IBOutlet weak var textAction: UILabel!
     @IBOutlet weak var counterLbl: UILabel!
+    @IBOutlet weak var textEnd: UILabel!
+    @IBOutlet weak var textWordEnd: UILabel!
+    @IBOutlet weak var btnRetry: UIButton!
     
-    var counterMinutes = 0
-    var counterSeconds = 0
-    var counterMiliseconds = 0
-    var countDirection = "Down"
-    var maxCounter = 5
+    var counterMinutes = 0;
+    var counterSeconds = 0;
+    var totalSeconds = 0;
+    //var counterMiliseconds = 0;
+    var countDirection = "Up"
+    var maxCounterSeconds = 10
     var counterTimer: Timer? = nil
+    var buttons = [UIButton]()
     
-    var wordChosen: String = "coiffeur"
+    let wordChosen = ""
     
     var arrayOfWord: [String] = []
     var arrayOfSoluce: [String] = []
     var nbTry: Int = 10
     var counter: Int = 0;
     
+    func readJSONFile() -> String {
+        do {
+            if let fileUrl = Bundle.main.url(forResource: "liste-mots", withExtension: "json") {
+                let jsonData = try Data(contentsOf: fileUrl)
+                let mots = try JSONDecoder().decode([String].self, from: jsonData)
+                
+                if let motAleatoire = mots.randomElement() {
+                    print("Mot aléatoire :", motAleatoire)
+                    return motAleatoire
+                } else {
+                    print("Le tableau de mots est vide.")
+                }
+            } else {
+                print("Fichier JSON introuvable.")
+            }
+        } catch {
+            print("Erreur lors de la lecture du fichier JSON :", error.localizedDescription)
+        }
+        return "error"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let wordChosen: String = readJSONFile()
+        
+        
+        for subview in view.subviews {
+            if let button = subview as? UIButton{
+                buttons.append(button)
+            }
+        }
+        
         if(countDirection == "Down"){
-            counterSeconds = maxCounter;
+            counterMinutes = maxCounterSeconds / 60;
+            counterSeconds = maxCounterSeconds % 60;
         }
         else{
             counterSeconds = 0;
         }
-        counterLbl.text = String(counterSeconds);
-        textAction.text = "";
+        counterLbl.text = "Timer : "+String(counterMinutes)+"m"+String(counterSeconds)+"s";
+        textEnd.text = ""
+        textWordEnd.text = "";
+        textAction.text = ""
         
         for char in wordChosen{
             arrayOfWord.append(String(char))
@@ -48,6 +86,10 @@ class JeuController: UIViewController {
         updateLabelSoluce()
     }
     
+    func startGame(){
+        
+    }
+    
     @IBAction func onClickBtn(_ sender: UIButton) {
         var btnTitle = sender.titleLabel?.text ?? ""
         btnTitle = btnTitle.lowercased()
@@ -56,6 +98,7 @@ class JeuController: UIViewController {
         if(counterTimer == nil){
             startTimer();
         }
+
         
         for (index, element) in arrayOfWord.enumerated(){
             if (element == btnTitle){
@@ -72,7 +115,12 @@ class JeuController: UIViewController {
 
             if (counter >= nbTry){
                 changeImg(nbr:counter);
-                textAction.text = "PERDU !";
+                textAction.text = "Vous avez PERDU !"
+                textEnd.text = "Le mot était : "
+                textWordEnd.text = wordChosen.uppercased()
+                for button in buttons{
+                    button.removeFromSuperview()
+                }
             } else {
                 changeImg(nbr:counter);
             }
@@ -89,9 +137,7 @@ class JeuController: UIViewController {
             }
         }
         if (tab.isEmpty){
-            let text = "gagné !"
-            textAction.textColor = UIColor.systemGreen
-            textAction.text = text.uppercased()
+            gameWon();
         }
     }
     
@@ -119,33 +165,82 @@ class JeuController: UIViewController {
     func timeIsOut(){
         //Ends the game when the timer runs out
         print("Timer ended")
-        endGame();
+        gameOver();
     }
     
-    func endGame(){
-        print("Game Ended");
+    func gameWon(){
         counterTimer?.invalidate();
+        let text = "Vous avez GAGNÉ !"
+        textAction.text = text
+        textEnd.text = "Nombre d'erreurs :"
+        textWordEnd.text = String(counter)
+        btnRetry.layer.opacity = 1
+        textAction.textColor = UIColor.systemGreen
+        for button in buttons{
+            button.removeFromSuperview()
+        }
+    }
+    
+    func gameOver(){
+        counterTimer?.invalidate();
+        changeImg(nbr:nbTry);
+        textAction.text = "Vous avez PERDU !";
+        textEnd.text = "Le mot était : ";
+        textWordEnd.text = wordChosen.uppercased();
+        removeAllButtons();
     }
     
     @objc func updateSecondsLblCounter() {
-        //example functionality
-        if(countDirection == "Up"){
-            counterSeconds += 1;
-            counterLbl.text = String(counterSeconds);
-        }
-        else if(countDirection == "Down"){
-            if(counterSeconds > 0){
-                counterSeconds -= 1;
-                counterLbl.text = String(counterSeconds);
+            if(countDirection == "Up"){
+                if(counterSeconds < 60){
+                    counterSeconds += 1;
+                }
+                else{
+                    counterSeconds = 0;
+                    counterMinutes += 1;
+                }
+                counterLbl.text = "Timer  : "+String(counterMinutes)+"m"+String(counterSeconds)+"s";
+            }
+            else if(countDirection == "Down"){
+                totalSeconds = (counterMinutes * 60) + counterSeconds;
+                if(totalSeconds != 0){
+                    if(counterSeconds > 0){
+                        counterSeconds -= 1;
+                            totalSeconds = (counterMinutes * 60) + counterSeconds;
+                        if(totalSeconds == 0){
+                            timeIsOut();
+                        }
+                    }
+                    else{
+                        counterSeconds = 60;
+                        counterMinutes -= 1;
+                    }
+                    counterLbl.text = "Timer : "+String(counterMinutes)+"m"+String(counterSeconds)+"s ";
+                }
+                else{
+                    timeIsOut();
+                }
             }
             else{
-                timeIsOut();
-                return;
+                print("Bad value for var countDirection");
             }
         }
-        else{
-            print("Bad value for var countDirection");
+        func removeAllButtons(){
+            for button in buttons{
+                button.removeFromSuperview()
+            }
         }
-    }
 
+    func addStyleToBtn(btn: UIButton, revert: Bool){
+        btn.layer.shadowColor = UIColor.systemYellow.cgColor
+        if (revert){
+            btn.layer.shadowColor = UIColor.lightIndigo.cgColor
+        }
+        btn.layer.shadowOffset = CGSize(width: 4.0, height: 6.0)
+        btn.layer.shadowRadius = 0
+        btn.layer.shadowOpacity = 1
+        btn.layer.cornerRadius = 0.0
+        btn.layer.masksToBounds = false
+    }
+    
 }

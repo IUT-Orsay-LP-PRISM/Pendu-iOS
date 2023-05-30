@@ -8,24 +8,26 @@
 import UIKit
 
 class MenuController: UIViewController {
-    var nbrErreur = 0
-    var counterMinutes = 0
-    var counterSeconds = 0
-    var counterMiliseconds = 0
-    var countDirection = "Up"
-    var maxCounter = 20
-    var counterTimer: Timer? = nil
+    var nbrErreur = 0;
+    var counterMinutes = 0;
+    var counterSeconds = 0;
+    var totalSeconds = 0;
+    //var counterMiliseconds = 0;
+    var countDirection = "Up";
+    var maxCounterSeconds = 20;
+    var counterTimer: Timer? = nil;
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        nbrErreur = 0
+        super.viewDidLoad();
+        nbrErreur = 0;
         if(countDirection == "Down"){
-            counterSeconds = maxCounter;
+            counterMinutes = maxCounterSeconds / 60;
+            counterSeconds = maxCounterSeconds % 60;
         }
         else{
             counterSeconds = 0;
         }
-        counterLbl.text = String(counterSeconds);
+        counterLbl.text = "Timer : "+String(counterMinutes)+"m"+String(counterSeconds)+"s";
         // Do any additional setup after loading the view.
     }
     
@@ -82,25 +84,87 @@ class MenuController: UIViewController {
     }
     
     @objc func updateSecondsLblCounter() {
-        //example functionality
         if(countDirection == "Up"){
-            counterSeconds += 1;
-            counterLbl.text = String(counterSeconds);
+            if(counterSeconds < 60){
+                counterSeconds += 1;
+            }
+            else{
+                counterSeconds = 0;
+                counterMinutes += 1;
+            }
+            counterLbl.text = "Timer : "+String(counterMinutes)+"m"+String(counterSeconds)+"s";
         }
         else if(countDirection == "Down"){
-            if(counterSeconds > 0){
-                counterSeconds -= 1;
-                counterLbl.text = String(counterSeconds);
+            totalSeconds = (counterMinutes * 60) + counterSeconds;
+            if(totalSeconds != 0){
+                if(counterSeconds > 0){
+                    counterSeconds -= 1;
+                        totalSeconds = (counterMinutes * 60) + counterSeconds;
+                    if(totalSeconds == 0){
+                        timeIsOut();
+                    }
+                }
+                else{
+                    counterSeconds = 60;
+                    counterMinutes -= 1;
+                }
+                counterLbl.text = "Timer : "+String(counterMinutes)+"m"+String(counterSeconds)+"s ";
             }
             else{
                 timeIsOut();
-                return;
             }
         }
         else{
             print("Bad value for var countDirection");
         }
     }
+    
+    //Commented because the milisecond timer isn't accurate
+    /* @objc func updateSecondsLblCounter() {
+        //example functionality
+        if(countDirection == "Up"){
+            if(counterSeconds <= 60){
+                if(counterMiliseconds <= 1000){
+                    counterMiliseconds += 1;
+                }
+                else{
+                    counterMiliseconds = 0;
+                    counterSeconds += 1;
+                }
+            }
+            else{
+                counterSeconds = 0;
+                counterMinutes += 1;
+            }
+            
+            counterLbl.text = String(counterMinutes)+"m "+String(counterSeconds)+"."+String(counterMiliseconds)+"s";
+        }
+        else if(countDirection == "Down"){
+            let totalMiliseconds = ((counterMinutes * 60)) + (counterSeconds * 1000) + counterMiliseconds;
+            if(totalMiliseconds != 0){
+                if(counterSeconds > 0){
+                    if(counterMiliseconds > 0){
+                        counterMiliseconds -= 1;
+                    }
+                    else{
+                        counterMiliseconds = 1000;
+                        counterSeconds -= 1;
+                    }
+                }
+                else{
+                    counterSeconds = 60;
+                    counterMinutes -= 1;
+                }
+            }
+            else{
+                timeIsOut();
+            }
+            counterLbl.text = String(counterMinutes)+"m "+String(counterSeconds)+"."+String(counterMiliseconds)+"s";
+        }
+        else{
+            print("Bad value for var countDirection");
+        }
+    }*/
     
     /*
     // MARK: - Navigation
