@@ -32,32 +32,9 @@ class JeuController: UIViewController {
     var nbTry: Int = 10
     var counter: Int = 0;
     
-    func readJSONFile() -> String {
-        do {
-            if let fileUrl = Bundle.main.url(forResource: "liste-mots", withExtension: "json") {
-                let jsonData = try Data(contentsOf: fileUrl)
-                let mots = try JSONDecoder().decode([String].self, from: jsonData)
-                
-                if let motAleatoire = mots.randomElement() {
-                    print("Mot aléatoire :", motAleatoire)
-                    return motAleatoire
-                } else {
-                    print("Le tableau de mots est vide.")
-                }
-            } else {
-                print("Fichier JSON introuvable.")
-            }
-        } catch {
-            print("Erreur lors de la lecture du fichier JSON :", error.localizedDescription)
-        }
-        return "error"
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        wordChosen = readJSONFile()
-        
+        wordChosen = JsonRead.readJSONFile()
         
         for subview in view.subviews {
             if let button = subview as? UIButton{
@@ -250,7 +227,7 @@ class JeuController: UIViewController {
     }
     
     func restart(){
-        wordChosen = readJSONFile()
+        wordChosen = JsonRead.readJSONFile()
         
         for subview in view.subviews {
             if let button = subview as? UIButton{
