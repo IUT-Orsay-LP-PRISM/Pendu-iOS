@@ -24,15 +24,39 @@ class JeuController: UIViewController {
     var counterTimer: Timer? = nil
     var buttons = [UIButton]()
     
-    var wordChosen: String = "coiffeur"
+    let wordChosen = ""
     
     var arrayOfWord: [String] = []
     var arrayOfSoluce: [String] = []
     var nbTry: Int = 10
     var counter: Int = 0;
     
+    func readJSONFile() -> String {
+        do {
+            if let fileUrl = Bundle.main.url(forResource: "liste-mots", withExtension: "json") {
+                let jsonData = try Data(contentsOf: fileUrl)
+                let mots = try JSONDecoder().decode([String].self, from: jsonData)
+                
+                if let motAleatoire = mots.randomElement() {
+                    print("Mot aléatoire :", motAleatoire)
+                    return motAleatoire
+                } else {
+                    print("Le tableau de mots est vide.")
+                }
+            } else {
+                print("Fichier JSON introuvable.")
+            }
+        } catch {
+            print("Erreur lors de la lecture du fichier JSON :", error.localizedDescription)
+        }
+        return "error"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let wordChosen: String = readJSONFile()
+        
         
         for subview in view.subviews {
             if let button = subview as? UIButton{
@@ -50,8 +74,7 @@ class JeuController: UIViewController {
         textEnd.text = ""
         textWordEnd.text = "";
         textAction.text = ""
-        btnRetry.layer.opacity = 0
-
+        
         for char in wordChosen{
             arrayOfWord.append(String(char))
             arrayOfSoluce.append("_")
@@ -59,6 +82,10 @@ class JeuController: UIViewController {
         print(arrayOfWord)
         print(arrayOfSoluce)
         updateLabelSoluce()
+    }
+    
+    func startGame(){
+        
     }
     
     @IBAction func onClickBtn(_ sender: UIButton) {
@@ -85,7 +112,6 @@ class JeuController: UIViewController {
             sender.removeFromSuperview()
 
             if (counter >= nbTry){
-                btnRetry.layer.opacity = 0.5
                 changeImg(nbr:counter);
                 textAction.text = "Vous avez PERDU !"
                 textEnd.text = "Le mot était : "
@@ -113,12 +139,10 @@ class JeuController: UIViewController {
             textAction.text = text
             textEnd.text = "Nombre d'erreurs :"
             textWordEnd.text = String(counter)
-            btnRetry.layer.opacity = 1
             textAction.textColor = UIColor.systemGreen
             for button in buttons{
                 button.removeFromSuperview()
             }
-
         }
     }
     
