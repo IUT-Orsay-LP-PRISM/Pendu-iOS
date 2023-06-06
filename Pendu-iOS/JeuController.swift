@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class JeuController: UIViewController {
     @IBOutlet weak var penduImg: UIImageView!
@@ -24,6 +25,7 @@ class JeuController: UIViewController {
     var maxCounterSeconds = 0;
     var counterTimer: Timer? = nil;
     var buttons = [UIButton]()
+    var customSettings = [String:String]()
     
     var wordChosen = ""
     
@@ -36,7 +38,9 @@ class JeuController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         wordChosen = JsonRead.readJSONFile()
+        print(customSettings)
         
         for subview in view.subviews {
             if let button = subview as? UIButton{
