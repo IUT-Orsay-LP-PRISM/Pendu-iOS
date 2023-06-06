@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class JeuController: UIViewController {
     @IBOutlet weak var penduImg: UIImageView!
@@ -16,42 +17,63 @@ class JeuController: UIViewController {
     @IBOutlet weak var textWordEnd: UILabel!
     @IBOutlet weak var btnRetry: UIButton!
     
-    var counterMinutes = 0
-    var counterSeconds = 0
-    var counterMiliseconds = 0
-    var countDirection = "Down"
-    var maxCounter = 5
-    var counterTimer: Timer? = nil
+    var counterMinutes = 0;
+    var counterSeconds = 0;
+    var totalSeconds = 0;
+    //var counterMiliseconds = 0;
+    var countDirection = "Up";
+    var maxCounterSeconds = 0;
+    var counterTimer: Timer? = nil;
     var buttons = [UIButton]()
+    var customSettings = [String:String]()
     
-    var wordChosen: String = "coiffeur"
+    var wordChosen = ""
     
     var arrayOfWord: [String] = []
     var arrayOfSoluce: [String] = []
     var nbTry: Int = 10
     var counter: Int = 0;
     
+    var state = "DÉMARRER"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        wordChosen = JsonRead.readJSONFile()
+        print(customSettings)
         
         for subview in view.subviews {
             if let button = subview as? UIButton{
-                buttons.append(button)
+                buttons.append(button);
+                button.isHidden = true;
             }
         }
         
-        if(countDirection == "Down"){
-            counterSeconds = maxCounter;
-        }
-        else{
+        btnRetry.isHidden = false;
+        
+        if(maxCounterSeconds == 0){
+            countDirection = "Up";
             counterSeconds = 0;
         }
-        counterLbl.text = String(counterSeconds);
+        else if(maxCounterSeconds == 30){
+            countDirection = "Down";
+            counterMinutes = maxCounterSeconds / 60;
+            counterSeconds = maxCounterSeconds % 60;
+        }
+        else if(maxCounterSeconds == 90){
+            countDirection = "Down";
+            counterMinutes = maxCounterSeconds / 60;
+            counterSeconds = maxCounterSeconds % 60;
+        }
+        else{
+            print("Erreur pour la valeur de maxCounterSeconds")
+        }
+        
+        counterLbl.text = "Timer : "+String(counterMinutes)+"m"+String(counterSeconds)+"s";
         textEnd.text = ""
         textWordEnd.text = "";
         textAction.text = ""
-        btnRetry.layer.opacity = 0
-
+        
         for char in wordChosen{
             arrayOfWord.append(String(char))
             arrayOfSoluce.append("_")
@@ -59,6 +81,21 @@ class JeuController: UIViewController {
         print(arrayOfWord)
         print(arrayOfSoluce)
         updateLabelSoluce()
+    }
+    
+    @IBAction func startGame(){
+        if(state == "DÉMARRER"){
+            if(counterTimer == nil){
+                startTimer();
+            }
+            showAllButtons();
+            state = "REDÉMARRER"
+            btnRetry.isHidden = true;
+        }
+        else if(state == "REDÉMARRER"){
+            restart();
+        }
+                
     }
     
     @IBAction func onClickBtn(_ sender: UIButton) {
@@ -75,24 +112,17 @@ class JeuController: UIViewController {
             if (element == btnTitle){
                 arrayOfSoluce[index] = btnTitle.uppercased()
                 updateLabelSoluce()
-                sender.removeFromSuperview()
+                sender.isHidden = true;
                 status = true;
             }
         }
 
         if (!status){
             counter += 1;
-            sender.removeFromSuperview()
+            sender.isHidden = true;
 
             if (counter >= nbTry){
-                btnRetry.layer.opacity = 0.5
-                changeImg(nbr:counter);
-                textAction.text = "Vous avez PERDU !"
-                textEnd.text = "Le mot était : "
-                textWordEnd.text = wordChosen.uppercased()
-                for button in buttons{
-                    button.removeFromSuperview()
-                }
+                gameOver();
             } else {
                 changeImg(nbr:counter);
             }
@@ -109,16 +139,7 @@ class JeuController: UIViewController {
             }
         }
         if (tab.isEmpty){
-            let text = "Vous avez GAGNÉ !"
-            textAction.text = text
-            textEnd.text = "Nombre d'erreurs :"
-            textWordEnd.text = String(counter)
-            btnRetry.layer.opacity = 1
-            textAction.textColor = UIColor.systemGreen
-            for button in buttons{
-                button.removeFromSuperview()
-            }
-
+            gameWon();
         }
     }
     
@@ -146,32 +167,75 @@ class JeuController: UIViewController {
     func timeIsOut(){
         //Ends the game when the timer runs out
         print("Timer ended")
-        endGame();
+        gameOver();
     }
     
-    func endGame(){
-        print("Game Ended");
+    func gameWon(){
         counterTimer?.invalidate();
+        let text = "Vous avez GAGNÉ !"
+        textAction.text = text
+        textEnd.text = "Nombre d'erreurs :"
+        textWordEnd.text = String(counter)
+        btnRetry.layer.opacity = 1
+        textAction.textColor = UIColor.systemGreen
+        removeAllButtons();
+        btnRetry.isHidden = false;
+    }
+    
+    func gameOver(){
+        counterTimer?.invalidate();
+        changeImg(nbr:nbTry);
+        textAction.text = "Vous avez PERDU !";
+        textEnd.text = "Le mot était : ";
+        textWordEnd.text = wordChosen.uppercased();
+        removeAllButtons();
+        btnRetry.isHidden = false;
     }
     
     @objc func updateSecondsLblCounter() {
-        //example functionality
-        if(countDirection == "Up"){
-            counterSeconds += 1;
-            counterLbl.text = String(counterSeconds);
-        }
-        else if(countDirection == "Down"){
-            if(counterSeconds > 0){
-                counterSeconds -= 1;
-                counterLbl.text = String(counterSeconds);
+            if(countDirection == "Up"){
+                if(counterSeconds < 60){
+                    counterSeconds += 1;
+                }
+                else{
+                    counterSeconds = 0;
+                    counterMinutes += 1;
+                }
+                counterLbl.text = "Timer  : "+String(counterMinutes)+"m"+String(counterSeconds)+"s";
+            }
+            else if(countDirection == "Down"){
+                totalSeconds = (counterMinutes * 60) + counterSeconds;
+                if(totalSeconds != 0){
+                    if(counterSeconds > 0){
+                        counterSeconds -= 1;
+                            totalSeconds = (counterMinutes * 60) + counterSeconds;
+                        if(totalSeconds == 0){
+                            timeIsOut();
+                        }
+                    }
+                    else{
+                        counterSeconds = 60;
+                        counterMinutes -= 1;
+                    }
+                    counterLbl.text = "Timer : "+String(counterMinutes)+"m"+String(counterSeconds)+"s ";
+                }
+                else{
+                    timeIsOut();
+                }
             }
             else{
-                timeIsOut();
-                return;
+                print("Bad value for var countDirection");
             }
         }
-        else{
-            print("Bad value for var countDirection");
+        func removeAllButtons(){
+            for button in buttons{
+                button.isHidden = true;
+            }
+        }
+    
+    func showAllButtons(){
+        for button in buttons{
+            button.isHidden = false;
         }
     }
 
@@ -185,6 +249,43 @@ class JeuController: UIViewController {
         btn.layer.shadowOpacity = 1
         btn.layer.cornerRadius = 0.0
         btn.layer.masksToBounds = false
+    }
+    
+    func restart(){
+        wordChosen = JsonRead.readJSONFile()
+        
+        showAllButtons();
+        btnRetry.isHidden = true;
+        
+        counterTimer = nil
+        if(countDirection == "Down"){
+            counterMinutes = maxCounterSeconds / 60;
+            counterSeconds = maxCounterSeconds % 60;
+        }
+        else{
+            counterSeconds = 0;
+        }
+        counterLbl.text = "Timer : "+String(counterMinutes)+"m"+String(counterSeconds)+"s";
+        startTimer();
+        
+        counter = 0;
+        changeImg(nbr: counter);
+        
+        textEnd.text = ""
+        textWordEnd.text = "";
+        textAction.text = ""
+        
+        arrayOfWord = [];
+        arrayOfSoluce = [];
+        
+        for char in wordChosen{
+            arrayOfWord.append(String(char))
+            arrayOfSoluce.append("_")
+        }
+        
+        print(arrayOfWord)
+        print(arrayOfSoluce)
+        updateLabelSoluce()
     }
     
 }
