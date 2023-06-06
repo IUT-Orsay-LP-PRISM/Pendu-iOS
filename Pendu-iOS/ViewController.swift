@@ -43,7 +43,7 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue,sender: Any?){
         if segue.identifier == "DeMenuVersJeu" {
             // Definition du controler de destinatation
-            let destinationVC = segue.destination as! MenuController
+            let destinationVC = segue.destination as! JeuController
          }
     }
 
