@@ -22,10 +22,10 @@ class JeuController: UIViewController {
     var totalSeconds = 0;
     //var counterMiliseconds = 0;
     var countDirection = "Up";
-    var maxCounterSeconds = 0;
     var counterTimer: Timer? = nil;
     var buttons = [UIButton]()
     var customSettings = [String:String]()
+    var maxCounterSeconds = 0
     
     var wordChosen = ""
     
@@ -51,17 +51,19 @@ class JeuController: UIViewController {
         
         btnRetry.isHidden = false;
         
-        if(maxCounterSeconds == 0){
+        if(customSettings["time"] == "infini"){
             countDirection = "Up";
             counterSeconds = 0;
         }
-        else if(maxCounterSeconds == 30){
+        else if(customSettings["time"] == "30"){
             countDirection = "Down";
+            maxCounterSeconds = 30
             counterMinutes = maxCounterSeconds / 60;
             counterSeconds = maxCounterSeconds % 60;
         }
-        else if(maxCounterSeconds == 90){
+        else if(customSettings["time"] == "90"){
             countDirection = "Down";
+            maxCounterSeconds = 90
             counterMinutes = maxCounterSeconds / 60;
             counterSeconds = maxCounterSeconds % 60;
         }
