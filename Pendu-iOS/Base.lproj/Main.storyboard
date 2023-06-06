@@ -37,6 +37,9 @@
                                     <fontDescription key="titleFontDescription" name="DarumadropOne-Regular" family="Darumadrop One" pointSize="30"/>
                                     <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="sAU-w4-5IU" kind="show" id="URH-7n-1PZ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" role="primary" translatesAutoresizingMaskIntoConstraints="NO" id="laW-fT-P76">
                                 <rect key="frame" x="150" y="598.5" width="114.5" height="57.5"/>
@@ -48,7 +51,7 @@
                                     <color key="baseBackgroundColor" red="0.346008867" green="0.33545207980000002" blue="0.84008985759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="8sA-P9-DSy" kind="push" identifier="DeMenuVersJeu" id="4dg-Hw-cSP"/>
+                                    <segue destination="8sA-P9-DSy" kind="show" identifier="DeMenuVersJeu" id="4dg-Hw-cSP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" role="primary" translatesAutoresizingMaskIntoConstraints="NO" id="2Hg-G7-PXZ">
@@ -230,7 +233,41 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hnP-np-yhH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="298.55072463768118" y="851.78571428571422"/>
+            <point key="canvasLocation" x="939" y="868"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Q3j-RL-vfP">
+            <objects>
+                <viewController id="sAU-w4-5IU" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="80Y-1g-j6x">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Les règles" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nck-d7-dTi">
+                                <rect key="frame" x="67" y="102" width="280" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DarumadropOne-Regular" family="Darumadrop One" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LCv-SN-ME4">
+                                <rect key="frame" x="20" y="195" width="374" height="630"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" name="DarumadropOne-Regular" family="Darumadrop One" pointSize="28"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="KSH-Va-4vl"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="f9g-wm-jRV"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iwe-0m-PyM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="127.53623188405798" y="867.85714285714278"/>
         </scene>
         <!--Jeu Controller-->
         <scene sceneID="6BS-oD-x4d">
@@ -713,7 +750,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uVl-Cs-ERr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1775" y="84"/>
+            <point key="canvasLocation" x="1777" y="84"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Zmv-fZ-uek">
