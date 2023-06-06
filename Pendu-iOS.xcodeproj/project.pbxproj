@@ -8,30 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		215362B42A13B408009B47C0 /* JeuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215362B32A13B408009B47C0 /* JeuController.swift */; };
-		217A67D32A25E93700190608 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217A67D22A25E93700190608 /* CustomButton.swift */; };
+		217A67D52A25F41F00190608 /* liste-mots.json in Resources */ = {isa = PBXBuildFile; fileRef = 217A67D42A25F41F00190608 /* liste-mots.json */; };
+		217A67D92A25F98800190608 /* JsonRead.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217A67D82A25F98800190608 /* JsonRead.swift */; };
 		218320802A0A243500641938 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2183207F2A0A243500641938 /* AppDelegate.swift */; };
 		218320822A0A243500641938 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218320812A0A243500641938 /* SceneDelegate.swift */; };
 		218320842A0A243500641938 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218320832A0A243500641938 /* ViewController.swift */; };
 		218320872A0A243500641938 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 218320852A0A243500641938 /* Main.storyboard */; };
-		2183208A2A0A243500641938 /* Pendu_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 218320882A0A243500641938 /* Pendu_iOS.xcdatamodeld */; };
 		2183208C2A0A243700641938 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2183208B2A0A243700641938 /* Assets.xcassets */; };
 		2183208F2A0A243700641938 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2183208D2A0A243700641938 /* LaunchScreen.storyboard */; };
+		21921DD02A2F296A0075D0F5 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21921DCF2A2F296A0075D0F5 /* GameController.swift */; };
 		9929C08A2A13AA3000C06CD0 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9929C0892A13AA3000C06CD0 /* MenuController.swift */; };
 		9929C08D2A13AD5200C06CD0 /* DarumadropOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9929C08C2A13AD5200C06CD0 /* DarumadropOne-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		215362B32A13B408009B47C0 /* JeuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JeuController.swift; sourceTree = "<group>"; };
-		217A67D22A25E93700190608 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		217A67D42A25F41F00190608 /* liste-mots.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "liste-mots.json"; sourceTree = "<group>"; };
+		217A67D82A25F98800190608 /* JsonRead.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonRead.swift; sourceTree = "<group>"; };
 		2183207C2A0A243500641938 /* Pendu-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pendu-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2183207F2A0A243500641938 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		218320812A0A243500641938 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		218320832A0A243500641938 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		218320862A0A243500641938 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		218320892A0A243500641938 /* Pendu_iOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pendu_iOS.xcdatamodel; sourceTree = "<group>"; };
 		2183208B2A0A243700641938 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2183208E2A0A243700641938 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		218320902A0A243700641938 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21921DCF2A2F296A0075D0F5 /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 		9929C0892A13AA3000C06CD0 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		9929C08C2A13AD5200C06CD0 /* DarumadropOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DarumadropOne-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -47,6 +49,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		217A67DA2A25FA8800190608 /* entity */ = {
+			isa = PBXGroup;
+			children = (
+				217A67D82A25F98800190608 /* JsonRead.swift */,
+			);
+			path = entity;
+			sourceTree = "<group>";
+		};
 		218320732A0A243500641938 = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +76,8 @@
 		2183207E2A0A243500641938 /* Pendu-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				217A67DA2A25FA8800190608 /* entity */,
+				217A67D42A25F41F00190608 /* liste-mots.json */,
 				9929C08B2A13AD1000C06CD0 /* font */,
 				215362B32A13B408009B47C0 /* JeuController.swift */,
 				2183207F2A0A243500641938 /* AppDelegate.swift */,
@@ -76,8 +88,7 @@
 				2183208B2A0A243700641938 /* Assets.xcassets */,
 				2183208D2A0A243700641938 /* LaunchScreen.storyboard */,
 				218320902A0A243700641938 /* Info.plist */,
-				218320882A0A243500641938 /* Pendu_iOS.xcdatamodeld */,
-				217A67D22A25E93700190608 /* CustomButton.swift */,
+				21921DCF2A2F296A0075D0F5 /* GameController.swift */,
 			);
 			path = "Pendu-iOS";
 			sourceTree = "<group>";
@@ -148,6 +159,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				217A67D52A25F41F00190608 /* liste-mots.json in Resources */,
 				2183208F2A0A243700641938 /* LaunchScreen.storyboard in Resources */,
 				9929C08D2A13AD5200C06CD0 /* DarumadropOne-Regular.ttf in Resources */,
 				2183208C2A0A243700641938 /* Assets.xcassets in Resources */,
@@ -163,10 +175,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9929C08A2A13AA3000C06CD0 /* MenuController.swift in Sources */,
-				2183208A2A0A243500641938 /* Pendu_iOS.xcdatamodeld in Sources */,
+				217A67D92A25F98800190608 /* JsonRead.swift in Sources */,
 				215362B42A13B408009B47C0 /* JeuController.swift in Sources */,
 				218320842A0A243500641938 /* ViewController.swift in Sources */,
-				217A67D32A25E93700190608 /* CustomButton.swift in Sources */,
+				21921DD02A2F296A0075D0F5 /* GameController.swift in Sources */,
 				218320802A0A243500641938 /* AppDelegate.swift in Sources */,
 				218320822A0A243500641938 /* SceneDelegate.swift in Sources */,
 			);
@@ -384,19 +396,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		218320882A0A243500641938 /* Pendu_iOS.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				218320892A0A243500641938 /* Pendu_iOS.xcdatamodel */,
-			);
-			currentVersion = 218320892A0A243500641938 /* Pendu_iOS.xcdatamodel */;
-			path = Pendu_iOS.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 218320742A0A243500641938 /* Project object */;
 }
