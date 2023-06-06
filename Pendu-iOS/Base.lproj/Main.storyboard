@@ -21,20 +21,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PENDIX_" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7t-Ej-FYr">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="PENDIX_" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7t-Ej-FYr">
                                 <rect key="frame" x="49" y="42" width="316" height="116"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="DarumadropOne-Regular" family="Darumadrop One" pointSize="80"/>
                                 <color key="textColor" systemColor="systemIndigoColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pendu" translatesAutoresizingMaskIntoConstraints="NO" id="ScM-pi-wSt">
-                                <rect key="frame" x="61" y="166" width="292" height="262"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pendu" translatesAutoresizingMaskIntoConstraints="NO" id="ScM-pi-wSt">
+                                <rect key="frame" x="82" y="236" width="250" height="245"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eJd-E8-ugJ">
-                                <rect key="frame" x="49" y="697" width="316" height="66"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eJd-E8-ugJ">
+                                <rect key="frame" x="124" y="777.5" width="166" height="57.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="LES REGLES">
                                     <fontDescription key="titleFontDescription" name="DarumadropOne-Regular" family="Darumadrop One" pointSize="30"/>
@@ -44,20 +41,8 @@
                                     <segue destination="8sA-P9-DSy" kind="show" id="wBL-Ka-2LP"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" role="primary" translatesAutoresizingMaskIntoConstraints="NO" id="YM7-2N-yo5">
-                                <rect key="frame" x="49" y="501" width="316" height="62"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <size key="titleShadowOffset" width="7" height="7"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="JOUER" titleAlignment="center">
-                                    <fontDescription key="titleFontDescription" name="DarumadropOne-Regular" family="Darumadrop One" pointSize="30"/>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="baseBackgroundColor" red="0.346008867" green="0.33545207980000002" blue="0.84008985759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </buttonConfiguration>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" role="primary" translatesAutoresizingMaskIntoConstraints="NO" id="laW-fT-P76">
-                                <rect key="frame" x="49" y="501" width="316" height="62"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" role="primary" translatesAutoresizingMaskIntoConstraints="NO" id="laW-fT-P76">
+                                <rect key="frame" x="150" y="598.5" width="114.5" height="57.5"/>
                                 <size key="titleShadowOffset" width="7" height="7"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="JOUER" titleAlignment="center">
@@ -69,20 +54,8 @@
                                     <segue destination="yUX-zz-BPz" kind="show" identifier="DeMenuVersJeu" id="Rmk-vr-n4N"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" role="primary" translatesAutoresizingMaskIntoConstraints="NO" id="2Hg-G7-PXZ">
-                                <rect key="frame" x="46" y="602" width="323" height="62"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <size key="titleShadowOffset" width="7" height="7"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="PARTIE PERSONALISEE" titleAlignment="center">
-                                    <fontDescription key="titleFontDescription" name="DarumadropOne-Regular" family="Darumadrop One" pointSize="30"/>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="baseBackgroundColor" red="0.346008867" green="0.33545207980000002" blue="0.84008985759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </buttonConfiguration>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" role="primary" translatesAutoresizingMaskIntoConstraints="NO" id="qOv-l6-nKW">
-                                <rect key="frame" x="46" y="602" width="323" height="62"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" role="primary" translatesAutoresizingMaskIntoConstraints="NO" id="2Hg-G7-PXZ">
+                                <rect key="frame" x="45.5" y="688" width="323" height="57.5"/>
                                 <size key="titleShadowOffset" width="7" height="7"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="PARTIE PERSONALISEE" titleAlignment="center">
@@ -95,6 +68,17 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" systemColor="labelColor"/>
+                        <constraints>
+                            <constraint firstItem="E7t-Ej-FYr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2zQ-7r-rac"/>
+                            <constraint firstItem="eJd-E8-ugJ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.8" id="4S1-2r-NKY"/>
+                            <constraint firstItem="2Hg-G7-PXZ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.6" id="6fB-MF-BeH"/>
+                            <constraint firstItem="2Hg-G7-PXZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="C9z-HY-esg"/>
+                            <constraint firstItem="eJd-E8-ugJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JI6-On-QEh"/>
+                            <constraint firstItem="ScM-pi-wSt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="j8a-3m-yj5"/>
+                            <constraint firstItem="laW-fT-P76" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.4" id="kpr-Rb-d26"/>
+                            <constraint firstItem="ScM-pi-wSt" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.8" id="m77-K8-cdp"/>
+                            <constraint firstItem="laW-fT-P76" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rg4-Jj-oBX"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rUt-Ox-dwX"/>
                     <connections>
@@ -115,20 +99,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1coup" translatesAutoresizingMaskIntoConstraints="NO" id="GGo-ec-sj2">
-                                <rect key="frame" x="70" y="151" width="274" height="249"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tentatives restantes : 10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dex-z0-1aF">
-                                <rect key="frame" x="20" y="408" width="374" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tentatives restantes : 10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dex-z0-1aF">
+                                <rect key="frame" x="50" y="408" width="314.5" height="42"/>
                                 <fontDescription key="fontDescription" name="DarumadropOne-Regular" family="Darumadrop One" pointSize="29"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" role="primary" translatesAutoresizingMaskIntoConstraints="NO" id="c2H-us-YmX">
-                                <rect key="frame" x="49" y="471" width="316" height="62"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" role="primary" translatesAutoresizingMaskIntoConstraints="NO" id="c2H-us-YmX">
+                                <rect key="frame" x="113" y="471" width="188.5" height="57.5"/>
                                 <size key="titleShadowOffset" width="7" height="7"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Incrementer" titleAlignment="center">
@@ -140,23 +118,36 @@
                                     <action selector="incrementAction:" destination="yUX-zz-BPz" eventType="touchUpInside" id="g08-Gn-4Z4"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Timer : 0s" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rXQ-y2-Lv7">
-                                <rect key="frame" x="87" y="61" width="307" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer : 0s" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rXQ-y2-Lv7">
+                                <rect key="frame" x="259" y="61" width="103.5" height="35"/>
                                 <fontDescription key="fontDescription" name="DarumadropOne-Regular" family="Darumadrop One" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="S_ _ _ _ _ _" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PAL-py-7hx">
-                                <rect key="frame" x="35" y="88" width="344" height="63"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="S_ _ _ _ _ _" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PAL-py-7hx">
+                                <rect key="frame" x="67.5" y="96" width="196.5" height="63"/>
                                 <fontDescription key="fontDescription" name="DarumadropOne-Regular" family="Darumadrop One" pointSize="43"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1coup" translatesAutoresizingMaskIntoConstraints="NO" id="GGo-ec-sj2">
+                                <rect key="frame" x="40.5" y="158" width="250" height="244.5"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="SLR-I1-N3G"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="PAL-py-7hx" firstAttribute="top" secondItem="9SD-xA-TKf" secondAttribute="topMargin" constant="8" id="1ny-OW-iGR"/>
+                            <constraint firstItem="PAL-py-7hx" firstAttribute="centerX" secondItem="9SD-xA-TKf" secondAttribute="centerX" multiplier="0.8" id="DEU-UG-Sdh"/>
+                            <constraint firstItem="dex-z0-1aF" firstAttribute="top" secondItem="GGo-ec-sj2" secondAttribute="bottom" constant="5.5" id="Dry-fH-mS3"/>
+                            <constraint firstItem="GGo-ec-sj2" firstAttribute="top" secondItem="9SD-xA-TKf" secondAttribute="topMargin" constant="70" id="PA2-eL-GdT"/>
+                            <constraint firstItem="rXQ-y2-Lv7" firstAttribute="centerX" secondItem="9SD-xA-TKf" secondAttribute="centerX" multiplier="1.5" id="PUU-Jj-q5C"/>
+                            <constraint firstItem="dex-z0-1aF" firstAttribute="centerX" secondItem="9SD-xA-TKf" secondAttribute="centerX" id="RNG-h8-5XQ"/>
+                            <constraint firstItem="rXQ-y2-Lv7" firstAttribute="top" secondItem="9SD-xA-TKf" secondAttribute="top" constant="61" id="byi-Ge-cym"/>
+                            <constraint firstItem="GGo-ec-sj2" firstAttribute="centerX" secondItem="9SD-xA-TKf" secondAttribute="centerX" multiplier="0.8" id="fle-IZ-z3E"/>
+                            <constraint firstItem="c2H-us-YmX" firstAttribute="centerX" secondItem="9SD-xA-TKf" secondAttribute="centerX" id="l8B-fv-lbQ"/>
+                            <constraint firstItem="c2H-us-YmX" firstAttribute="top" secondItem="dex-z0-1aF" secondAttribute="bottom" constant="21" id="mCo-ui-Kui"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vJ9-RC-Ue2"/>
                     <connections>

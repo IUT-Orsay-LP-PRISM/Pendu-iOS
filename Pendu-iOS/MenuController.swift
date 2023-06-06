@@ -17,8 +17,11 @@ class MenuController: UIViewController {
     var maxCounterSeconds = 20;
     var counterTimer: Timer? = nil;
     
+    
     override func viewDidLoad() {
         super.viewDidLoad();
+        triesLbl.minimumScaleFactor = 0.1;
+        
         nbrErreur = 0;
         if(countDirection == "Down"){
             counterMinutes = maxCounterSeconds / 60;
