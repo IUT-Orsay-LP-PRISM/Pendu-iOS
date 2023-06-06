@@ -40,9 +40,6 @@
                                     <fontDescription key="titleFontDescription" name="DarumadropOne-Regular" family="Darumadrop One" pointSize="30"/>
                                     <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
                                 </buttonConfiguration>
-                                <connections>
-                                    <segue destination="8sA-P9-DSy" kind="show" id="wBL-Ka-2LP"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" role="primary" translatesAutoresizingMaskIntoConstraints="NO" id="YM7-2N-yo5">
                                 <rect key="frame" x="49" y="501" width="316" height="62"/>
@@ -66,7 +63,7 @@
                                     <color key="baseBackgroundColor" red="0.346008867" green="0.33545207980000002" blue="0.84008985759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="yUX-zz-BPz" kind="show" identifier="DeMenuVersJeu" id="Rmk-vr-n4N"/>
+                                    <segue destination="8sA-P9-DSy" kind="push" identifier="DeMenuVersJeu" id="4dg-Hw-cSP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" role="primary" translatesAutoresizingMaskIntoConstraints="NO" id="2Hg-G7-PXZ">
@@ -171,7 +168,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tTU-nb-SYJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1882.608695652174" y="-376.33928571428572"/>
+            <point key="canvasLocation" x="2601" y="84"/>
         </scene>
         <!--Game Controller-->
         <scene sceneID="GRZ-Tx-dc5">
@@ -722,7 +719,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uVl-Cs-ERr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1882.608695652174" y="312.72321428571428"/>
+            <point key="canvasLocation" x="1775" y="84"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Zmv-fZ-uek">
