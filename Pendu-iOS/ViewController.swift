@@ -36,6 +36,7 @@ class ViewController: UIViewController {
         btn.layer.shadowRadius = 0
         btn.layer.shadowOpacity = 1
         btn.layer.cornerRadius = 0.0
+        
         btn.layer.masksToBounds = false
     }
 

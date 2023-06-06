@@ -218,14 +218,17 @@
                                 <color key="tintColor" systemColor="systemBackgroundColor"/>
                                 <color key="selectedSegmentTintColor" systemColor="tertiarySystemBackgroundColor"/>
                             </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jOU-0s-G8f">
-                                <rect key="frame" x="48" y="415" width="334" height="67"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jOU-0s-G8f">
+                                <rect key="frame" x="58" y="430" width="299" height="74"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="COMMENCER">
                                     <fontDescription key="titleFontDescription" name="DarumadropOne-Regular" family="Darumadrop One" pointSize="36"/>
                                     <color key="baseBackgroundColor" systemColor="systemIndigoColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="8sA-P9-DSy" kind="show" identifier="DePersoVersJeu" id="Bvi-8d-nV8"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9Oe-Lq-rEu"/>
@@ -743,6 +746,9 @@
             <point key="canvasLocation" x="28.985507246376812" y="83.705357142857139"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Bvi-8d-nV8"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="1coup" width="249.5" height="244.5"/>
         <image name="pendu" width="250" height="245"/>
