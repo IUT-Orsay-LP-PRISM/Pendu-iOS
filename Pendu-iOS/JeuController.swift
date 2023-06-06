@@ -22,12 +22,12 @@ class JeuController: UIViewController {
     var totalSeconds = 0;
     //var counterMiliseconds = 0;
     var countDirection = "Up";
-    var maxCounterSeconds = 0;
     var counterTimer: Timer? = nil;
     var buttons = [UIButton]()
     var customSettings = [String:String]()
+    var maxCounterSeconds = 0
 
-    var difficulte = "Normal"
+    var difficulte = "moyen"
     
     var wordChosen = ""
     
@@ -54,22 +54,21 @@ class JeuController: UIViewController {
         
         btnRetry.isHidden = false;
         
-        if(maxCounterSeconds == 0){
-            countDirection = "Up";
-            counterSeconds = 0;
-        }
-        else if(maxCounterSeconds == 30){
+        if(customSettings["time"] == "30"){
             countDirection = "Down";
+            maxCounterSeconds = 30
             counterMinutes = maxCounterSeconds / 60;
             counterSeconds = maxCounterSeconds % 60;
         }
-        else if(maxCounterSeconds == 90){
+        else if(customSettings["time"] == "90"){
             countDirection = "Down";
+            maxCounterSeconds = 90
             counterMinutes = maxCounterSeconds / 60;
             counterSeconds = maxCounterSeconds % 60;
         }
         else{
-            print("Erreur pour la valeur de maxCounterSeconds")
+            countDirection = "Up";
+            counterSeconds = 0;
         }
         
         counterLbl.text = "Timer : "+String(counterMinutes)+"m"+String(counterSeconds)+"s";
@@ -256,17 +255,14 @@ class JeuController: UIViewController {
     }
     
     func getNewWord(){
-        if(difficulte == "Normal"){
+        if(customSettings["difficulty"] == "moyen"){
             wordChosen = JsonRead.readJSONFile();
             while wordChosen.count >= 9 {
                 wordChosen = JsonRead.readJSONFile();
             }
         }
-        else if(difficulte == "Difficile"){
-            wordChosen = JsonRead.readJSONFile();
-        }
         else{
-            print("Erreur variable de difficulte")
+            wordChosen = JsonRead.readJSONFile();
         }
     }
     
