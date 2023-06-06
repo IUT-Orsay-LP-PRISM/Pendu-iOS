@@ -38,8 +38,13 @@ class JeuController: UIViewController {
     
     var state = "DÉMARRER"
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        word.adjustsFontSizeToFitWidth
+        word.minimumScaleFactor = 0.5
+        word.numberOfLines = 1
         
         getNewWord();
         

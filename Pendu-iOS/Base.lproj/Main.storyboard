@@ -129,7 +129,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer : 0s" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rXQ-y2-Lv7">
-                                <rect key="frame" x="259" y="61" width="103.5" height="35"/>
+                                <rect key="frame" x="-10.5" y="45" width="103.5" height="35"/>
                                 <fontDescription key="fontDescription" name="DarumadropOne-Regular" family="Darumadrop One" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -151,9 +151,9 @@
                             <constraint firstItem="PAL-py-7hx" firstAttribute="centerX" secondItem="9SD-xA-TKf" secondAttribute="centerX" multiplier="0.8" id="DEU-UG-Sdh"/>
                             <constraint firstItem="dex-z0-1aF" firstAttribute="top" secondItem="GGo-ec-sj2" secondAttribute="bottom" constant="5.5" id="Dry-fH-mS3"/>
                             <constraint firstItem="GGo-ec-sj2" firstAttribute="top" secondItem="9SD-xA-TKf" secondAttribute="topMargin" constant="70" id="PA2-eL-GdT"/>
-                            <constraint firstItem="rXQ-y2-Lv7" firstAttribute="centerX" secondItem="9SD-xA-TKf" secondAttribute="centerX" multiplier="1.5" id="PUU-Jj-q5C"/>
+                            <constraint firstItem="rXQ-y2-Lv7" firstAttribute="centerX" secondItem="9SD-xA-TKf" secondAttribute="centerX" multiplier="0.2" id="PUU-Jj-q5C"/>
                             <constraint firstItem="dex-z0-1aF" firstAttribute="centerX" secondItem="9SD-xA-TKf" secondAttribute="centerX" id="RNG-h8-5XQ"/>
-                            <constraint firstItem="rXQ-y2-Lv7" firstAttribute="top" secondItem="9SD-xA-TKf" secondAttribute="top" constant="61" id="byi-Ge-cym"/>
+                            <constraint firstItem="rXQ-y2-Lv7" firstAttribute="top" secondItem="9SD-xA-TKf" secondAttribute="top" constant="45" id="byi-Ge-cym"/>
                             <constraint firstItem="GGo-ec-sj2" firstAttribute="centerX" secondItem="9SD-xA-TKf" secondAttribute="centerX" multiplier="0.8" id="fle-IZ-z3E"/>
                             <constraint firstItem="c2H-us-YmX" firstAttribute="centerX" secondItem="9SD-xA-TKf" secondAttribute="centerX" id="l8B-fv-lbQ"/>
                             <constraint firstItem="c2H-us-YmX" firstAttribute="top" secondItem="dex-z0-1aF" secondAttribute="bottom" constant="21" id="mCo-ui-Kui"/>
@@ -271,17 +271,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Les règles" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nck-d7-dTi">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Les règles" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nck-d7-dTi">
                                 <rect key="frame" x="67" y="102" width="280" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="NYJ-de-4GT"/>
+                                    <constraint firstAttribute="height" constant="70" id="wbc-ld-kfQ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="DarumadropOne-Regular" family="Darumadrop One" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LCv-SN-ME4">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LCv-SN-ME4">
                                 <rect key="frame" x="20" y="195" width="374" height="630"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="630" id="8fg-ST-cB5"/>
+                                    <constraint firstAttribute="width" constant="374" id="JRE-L9-jfj"/>
+                                </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" name="DarumadropOne-Regular" family="Darumadrop One" pointSize="28"/>
@@ -290,6 +296,12 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KSH-Va-4vl"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="LCv-SN-ME4" firstAttribute="top" secondItem="Nck-d7-dTi" secondAttribute="bottom" constant="23" id="Gdw-XL-QPz"/>
+                            <constraint firstItem="Nck-d7-dTi" firstAttribute="centerX" secondItem="80Y-1g-j6x" secondAttribute="centerX" id="aXB-Qh-Zck"/>
+                            <constraint firstItem="Nck-d7-dTi" firstAttribute="top" secondItem="KSH-Va-4vl" secondAttribute="top" constant="14" id="kVw-45-d0h"/>
+                            <constraint firstItem="LCv-SN-ME4" firstAttribute="centerX" secondItem="80Y-1g-j6x" secondAttribute="centerX" id="koO-KI-9kg"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="f9g-wm-jRV"/>
                 </viewController>
@@ -301,7 +313,7 @@
         <scene sceneID="6BS-oD-x4d">
             <objects>
                 <viewController id="8sA-P9-DSy" customClass="JeuController" customModule="Pendu_iOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="R6p-O5-TBL">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="R6p-O5-TBL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -695,52 +707,70 @@
                                     <action selector="onClickBtn:" destination="8sA-P9-DSy" eventType="touchUpInside" id="CDr-n9-QD7"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PENDIX_" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ev-WS-Qke">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PENDIX_" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ev-WS-Qke">
                                 <rect key="frame" x="124" y="49" width="166" height="61"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="87J-W3-cAs"/>
+                                    <constraint firstAttribute="width" constant="166" id="d7X-Gp-lKH"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="DarumadropOne-Regular" family="Darumadrop One" pointSize="42"/>
                                 <color key="textColor" systemColor="systemIndigoColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="_" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FPG-4S-MGH">
-                                <rect key="frame" x="17" y="434" width="381" height="65"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FPG-4S-MGH">
+                                <rect key="frame" x="16.5" y="434" width="381" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="DyD-kj-Jgu"/>
+                                    <constraint firstAttribute="width" constant="381" id="GDN-rS-1Ls"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="24" id="TRk-NV-Oh4"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="69" id="hhC-U1-dY3"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="DarumadropOne-Regular" family="Darumadrop One" pointSize="47"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="1coup" translatesAutoresizingMaskIntoConstraints="NO" id="SfS-ic-I2B">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1coup" translatesAutoresizingMaskIntoConstraints="NO" id="SfS-ic-I2B">
                                 <rect key="frame" x="70" y="151" width="274" height="249"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="274" id="NWA-EU-u4k"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="249" id="RD3-0d-m0Y"/>
                                     <constraint firstAttribute="height" constant="249" id="Sp9-GE-sBA"/>
                                     <constraint firstAttribute="width" constant="274" id="ZFy-d1-148"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="274" id="vfG-uw-2F5"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wEp-rM-7sz">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wEp-rM-7sz">
                                 <rect key="frame" x="17" y="506" width="374" height="105"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="rPx-yT-fwy"/>
+                                    <constraint firstAttribute="height" constant="105" id="wx6-Uv-GRt"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="DarumadropOne-Regular" family="Darumadrop One" pointSize="42"/>
                                 <color key="textColor" systemColor="systemPinkColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Le mot était :" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m7Y-Ya-Ezn">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Le mot était :" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m7Y-Ya-Ezn">
                                 <rect key="frame" x="37" y="619" width="340" height="66"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="340" id="VJX-8y-NhB"/>
+                                    <constraint firstAttribute="height" constant="66" id="trv-wt-Fp3"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="DarumadropOne-Regular" family="Darumadrop One" pointSize="33"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mot choisi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4oA-5m-Njp">
-                                <rect key="frame" x="40" y="669" width="340" height="66"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mot choisi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4oA-5m-Njp">
+                                <rect key="frame" x="115" y="669" width="184.5" height="61"/>
                                 <fontDescription key="fontDescription" name="DarumadropOne-Regular" family="Darumadrop One" pointSize="42"/>
                                 <color key="textColor" systemColor="systemIndigoColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S78-DQ-dOX">
-                                <rect key="frame" x="71" y="757" width="279" height="66"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S78-DQ-dOX">
+                                <rect key="frame" x="67.5" y="752" width="279" height="66"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="66" id="GFS-jz-mss"/>
+                                    <constraint firstAttribute="width" constant="279" id="If4-i1-OXb"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="DÉMARRER">
                                     <fontDescription key="titleFontDescription" name="DarumadropOne-Regular" family="Darumadrop One" pointSize="30"/>
@@ -750,9 +780,12 @@
                                     <action selector="startGame" destination="8sA-P9-DSy" eventType="touchUpInside" id="7ff-bW-8l7"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Timer : 0s" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FRb-eF-kX6">
-                                <rect key="frame" x="31" y="105" width="352" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer : 0s" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FRb-eF-kX6">
+                                <rect key="frame" x="-10.5" y="105" width="352" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="LpK-MN-Yyt"/>
+                                    <constraint firstAttribute="width" constant="352" id="c8u-VE-4Kq"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="DarumadropOne-Regular" family="Darumadrop One" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -762,7 +795,21 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="SfS-ic-I2B" firstAttribute="leading" secondItem="bpq-aG-UMH" secondAttribute="leading" constant="70" id="383-Um-xPT"/>
+                            <constraint firstItem="SfS-ic-I2B" firstAttribute="top" secondItem="FRb-eF-kX6" secondAttribute="bottom" constant="1" id="4Sc-ny-yBu"/>
+                            <constraint firstItem="4oA-5m-Njp" firstAttribute="top" secondItem="wEp-rM-7sz" secondAttribute="bottom" constant="58" id="GMF-om-if4"/>
+                            <constraint firstItem="4Ev-WS-Qke" firstAttribute="centerX" secondItem="R6p-O5-TBL" secondAttribute="centerX" id="Hta-xH-1Tl"/>
+                            <constraint firstItem="4oA-5m-Njp" firstAttribute="centerX" secondItem="R6p-O5-TBL" secondAttribute="centerX" id="Lob-OF-Uo7"/>
                             <constraint firstAttribute="bottomMargin" secondItem="SfS-ic-I2B" secondAttribute="bottom" constant="474" id="TEI-J0-4sS"/>
+                            <constraint firstItem="FPG-4S-MGH" firstAttribute="centerX" secondItem="R6p-O5-TBL" secondAttribute="centerX" id="USK-qc-Yah"/>
+                            <constraint firstItem="m7Y-Ya-Ezn" firstAttribute="top" secondItem="wEp-rM-7sz" secondAttribute="bottom" constant="8" id="Xnj-ci-D8K"/>
+                            <constraint firstItem="wEp-rM-7sz" firstAttribute="top" secondItem="FPG-4S-MGH" secondAttribute="bottom" constant="7" id="Y0H-Gg-rbY"/>
+                            <constraint firstItem="FPG-4S-MGH" firstAttribute="top" secondItem="SfS-ic-I2B" secondAttribute="bottom" constant="34" id="bId-Yf-6FM"/>
+                            <constraint firstItem="FRb-eF-kX6" firstAttribute="centerX" secondItem="R6p-O5-TBL" secondAttribute="centerX" multiplier="0.8" id="iAP-bO-KeG"/>
+                            <constraint firstItem="S78-DQ-dOX" firstAttribute="top" secondItem="4oA-5m-Njp" secondAttribute="bottom" constant="22" id="kdk-Xg-0si"/>
+                            <constraint firstItem="S78-DQ-dOX" firstAttribute="centerX" secondItem="R6p-O5-TBL" secondAttribute="centerX" id="owh-jy-Hhl"/>
+                            <constraint firstItem="FRb-eF-kX6" firstAttribute="top" secondItem="bpq-aG-UMH" secondAttribute="top" constant="17" id="qce-OH-VK3"/>
+                            <constraint firstItem="FPG-4S-MGH" firstAttribute="top" secondItem="SfS-ic-I2B" secondAttribute="bottom" constant="34" id="xvf-wJ-cJQ"/>
+                            <constraint firstItem="4Ev-WS-Qke" firstAttribute="top" secondItem="R6p-O5-TBL" secondAttribute="top" constant="49" id="yNS-YN-lpN"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="RTt-3b-C2e"/>
