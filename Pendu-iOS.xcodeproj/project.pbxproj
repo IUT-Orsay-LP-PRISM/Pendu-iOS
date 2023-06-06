@@ -17,7 +17,6 @@
 		2183208C2A0A243700641938 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2183208B2A0A243700641938 /* Assets.xcassets */; };
 		2183208F2A0A243700641938 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2183208D2A0A243700641938 /* LaunchScreen.storyboard */; };
 		21921DD02A2F296A0075D0F5 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21921DCF2A2F296A0075D0F5 /* GameController.swift */; };
-		9929C08A2A13AA3000C06CD0 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9929C0892A13AA3000C06CD0 /* MenuController.swift */; };
 		9929C08D2A13AD5200C06CD0 /* DarumadropOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9929C08C2A13AD5200C06CD0 /* DarumadropOne-Regular.ttf */; };
 /* End PBXBuildFile section */
 
@@ -34,7 +33,6 @@
 		2183208E2A0A243700641938 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		218320902A0A243700641938 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21921DCF2A2F296A0075D0F5 /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
-		9929C0892A13AA3000C06CD0 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		9929C08C2A13AD5200C06CD0 /* DarumadropOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DarumadropOne-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,7 +79,6 @@
 				9929C08B2A13AD1000C06CD0 /* font */,
 				215362B32A13B408009B47C0 /* JeuController.swift */,
 				2183207F2A0A243500641938 /* AppDelegate.swift */,
-				9929C0892A13AA3000C06CD0 /* MenuController.swift */,
 				218320812A0A243500641938 /* SceneDelegate.swift */,
 				218320832A0A243500641938 /* ViewController.swift */,
 				218320852A0A243500641938 /* Main.storyboard */,
@@ -174,7 +171,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9929C08A2A13AA3000C06CD0 /* MenuController.swift in Sources */,
 				217A67D92A25F98800190608 /* JsonRead.swift in Sources */,
 				215362B42A13B408009B47C0 /* JeuController.swift in Sources */,
 				218320842A0A243500641938 /* ViewController.swift in Sources */,
