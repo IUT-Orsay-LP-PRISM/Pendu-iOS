@@ -208,11 +208,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="le-pendu-1" translatesAutoresizingMaskIntoConstraints="NO" id="NXn-4u-w31">
+                                <rect key="frame" x="20" y="668" width="374" height="194"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LCv-SN-ME4">
-                                <rect key="frame" x="20" y="195" width="374" height="630"/>
+                                <rect key="frame" x="20" y="205" width="374" height="465"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </string>
+                                <string key="text">Le but du jeu est simple : deviner toute les lettres qui doivent composer un mot, éventuellement avec un nombre limité de tentatives et des thèmes fixés à l’avance. A chaque fois que le joueur devine une lettre, celle-ci est affichée. Dans le cas contraire, le dessin d’un pendu se met à apparaître…</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" name="DarumadropOne-Regular" family="Darumadrop One" pointSize="28"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -734,6 +738,7 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="1coup" width="249.5" height="244.5"/>
+        <image name="le-pendu-1" width="133" height="236"/>
         <image name="pendu" width="250" height="245"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
