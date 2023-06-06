@@ -191,6 +191,7 @@ class JeuController: UIViewController {
         textAction.text = "Vous avez PERDU !";
         textEnd.text = "Le mot était : ";
         textWordEnd.text = wordChosen.uppercased();
+        textAction.textColor = UIColor.systemRed
         removeAllButtons();
         btnRetry.isHidden = false;
     }
