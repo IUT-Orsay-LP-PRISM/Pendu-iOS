@@ -26,6 +26,8 @@ class JeuController: UIViewController {
     var counterTimer: Timer? = nil;
     var buttons = [UIButton]()
     var customSettings = [String:String]()
+
+    var difficulte = "Normal"
     
     var wordChosen = ""
     
@@ -38,8 +40,9 @@ class JeuController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        wordChosen = JsonRead.readJSONFile()
+        
+        getNewWord();
+        
         print(customSettings)
         
         for subview in view.subviews {
@@ -251,8 +254,23 @@ class JeuController: UIViewController {
         btn.layer.masksToBounds = false
     }
     
+    func getNewWord(){
+        if(difficulte == "Normal"){
+            wordChosen = JsonRead.readJSONFile();
+            while wordChosen.count >= 9 {
+                wordChosen = JsonRead.readJSONFile();
+            }
+        }
+        else if(difficulte == "Difficile"){
+            wordChosen = JsonRead.readJSONFile();
+        }
+        else{
+            print("Erreur variable de difficulte")
+        }
+    }
+    
     func restart(){
-        wordChosen = JsonRead.readJSONFile()
+        getNewWord();
         
         showAllButtons();
         btnRetry.isHidden = true;
