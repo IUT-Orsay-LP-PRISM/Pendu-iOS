@@ -226,6 +226,9 @@
                                     <fontDescription key="titleFontDescription" name="DarumadropOne-Regular" family="Darumadrop One" pointSize="36"/>
                                     <color key="baseBackgroundColor" systemColor="systemIndigoColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="commencerr:" destination="azn-hQ-PMo" eventType="touchUpInside" id="wwq-4F-Ijy"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9Oe-Lq-rEu"/>
@@ -233,6 +236,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Da9-xN-Tmw"/>
                     <connections>
+                        <outlet property="commencer" destination="jOU-0s-G8f" id="0iJ-jY-VkE"/>
                         <outlet property="selectDifficulty" destination="s9C-Mj-lQx" id="LfJ-8W-M1h"/>
                         <outlet property="selectTime" destination="q6c-t6-eLc" id="m7J-9n-FVh"/>
                     </connections>
