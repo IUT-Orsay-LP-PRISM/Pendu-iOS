@@ -21,9 +21,9 @@ class JeuController: UIViewController {
     var counterSeconds = 0;
     var totalSeconds = 0;
     //var counterMiliseconds = 0;
-    var countDirection = "Up"
-    var maxCounterSeconds = 10
-    var counterTimer: Timer? = nil
+    var countDirection = "Up";
+    var maxCounterSeconds = 0;
+    var counterTimer: Timer? = nil;
     var buttons = [UIButton]()
     var customSettings = [String:String]()
     
@@ -34,6 +34,8 @@ class JeuController: UIViewController {
     var nbTry: Int = 10
     var counter: Int = 0;
     
+    var state = "DÉMARRER"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -42,17 +44,31 @@ class JeuController: UIViewController {
         
         for subview in view.subviews {
             if let button = subview as? UIButton{
-                buttons.append(button)
+                buttons.append(button);
+                button.isHidden = true;
             }
         }
         
-        if(countDirection == "Down"){
+        btnRetry.isHidden = false;
+        
+        if(maxCounterSeconds == 0){
+            countDirection = "Up";
+            counterSeconds = 0;
+        }
+        else if(maxCounterSeconds == 30){
+            countDirection = "Down";
+            counterMinutes = maxCounterSeconds / 60;
+            counterSeconds = maxCounterSeconds % 60;
+        }
+        else if(maxCounterSeconds == 90){
+            countDirection = "Down";
             counterMinutes = maxCounterSeconds / 60;
             counterSeconds = maxCounterSeconds % 60;
         }
         else{
-            counterSeconds = 0;
+            print("Erreur pour la valeur de maxCounterSeconds")
         }
+        
         counterLbl.text = "Timer : "+String(counterMinutes)+"m"+String(counterSeconds)+"s";
         textEnd.text = ""
         textWordEnd.text = "";
@@ -68,12 +84,17 @@ class JeuController: UIViewController {
     }
     
     @IBAction func startGame(){
-        /* if(btnRetry. == "DÉMARRER"){
-            
+        if(state == "DÉMARRER"){
+            if(counterTimer == nil){
+                startTimer();
+            }
+            showAllButtons();
+            state = "REDÉMARRER"
+            btnRetry.isHidden = true;
         }
-        else if(btnRetry.text == "REDÉMARRER"){
-            
-        }*/
+        else if(state == "REDÉMARRER"){
+            restart();
+        }
                 
     }
     
@@ -91,14 +112,14 @@ class JeuController: UIViewController {
             if (element == btnTitle){
                 arrayOfSoluce[index] = btnTitle.uppercased()
                 updateLabelSoluce()
-                sender.removeFromSuperview()
+                sender.isHidden = true;
                 status = true;
             }
         }
 
         if (!status){
             counter += 1;
-            sender.removeFromSuperview()
+            sender.isHidden = true;
 
             if (counter >= nbTry){
                 gameOver();
@@ -157,9 +178,8 @@ class JeuController: UIViewController {
         textWordEnd.text = String(counter)
         btnRetry.layer.opacity = 1
         textAction.textColor = UIColor.systemGreen
-        for button in buttons{
-            button.removeFromSuperview()
-        }
+        removeAllButtons();
+        btnRetry.isHidden = false;
     }
     
     func gameOver(){
@@ -169,6 +189,7 @@ class JeuController: UIViewController {
         textEnd.text = "Le mot était : ";
         textWordEnd.text = wordChosen.uppercased();
         removeAllButtons();
+        btnRetry.isHidden = false;
     }
     
     @objc func updateSecondsLblCounter() {
@@ -233,12 +254,10 @@ class JeuController: UIViewController {
     func restart(){
         wordChosen = JsonRead.readJSONFile()
         
-        for subview in view.subviews {
-            if let button = subview as? UIButton{
-                buttons.append(button)
-            }
-        }
+        showAllButtons();
+        btnRetry.isHidden = true;
         
+        counterTimer = nil
         if(countDirection == "Down"){
             counterMinutes = maxCounterSeconds / 60;
             counterSeconds = maxCounterSeconds % 60;
@@ -247,14 +266,23 @@ class JeuController: UIViewController {
             counterSeconds = 0;
         }
         counterLbl.text = "Timer : "+String(counterMinutes)+"m"+String(counterSeconds)+"s";
+        startTimer();
+        
+        counter = 0;
+        changeImg(nbr: counter);
+        
         textEnd.text = ""
         textWordEnd.text = "";
         textAction.text = ""
+        
+        arrayOfWord = [];
+        arrayOfSoluce = [];
         
         for char in wordChosen{
             arrayOfWord.append(String(char))
             arrayOfSoluce.append("_")
         }
+        
         print(arrayOfWord)
         print(arrayOfSoluce)
         updateLabelSoluce()
