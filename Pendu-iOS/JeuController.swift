@@ -20,9 +20,9 @@ class JeuController: UIViewController {
     var counterSeconds = 0;
     var totalSeconds = 0;
     //var counterMiliseconds = 0;
-    var countDirection = "Up"
-    var maxCounterSeconds = 10
-    var counterTimer: Timer? = nil
+    var countDirection = "Up";
+    var maxCounterSeconds = 0;
+    var counterTimer: Timer? = nil;
     var buttons = [UIButton]()
     
     var wordChosen = ""
@@ -47,13 +47,24 @@ class JeuController: UIViewController {
         
         btnRetry.isHidden = false;
         
-        if(countDirection == "Down"){
+        if(maxCounterSeconds == 0){
+            countDirection = "Up";
+            counterSeconds = 0;
+        }
+        else if(maxCounterSeconds == 30){
+            countDirection = "Down";
+            counterMinutes = maxCounterSeconds / 60;
+            counterSeconds = maxCounterSeconds % 60;
+        }
+        else if(maxCounterSeconds == 90){
+            countDirection = "Down";
             counterMinutes = maxCounterSeconds / 60;
             counterSeconds = maxCounterSeconds % 60;
         }
         else{
-            counterSeconds = 0;
+            print("Erreur pour la valeur de maxCounterSeconds")
         }
+        
         counterLbl.text = "Timer : "+String(counterMinutes)+"m"+String(counterSeconds)+"s";
         textEnd.text = ""
         textWordEnd.text = "";
@@ -69,7 +80,6 @@ class JeuController: UIViewController {
     }
     
     @IBAction func startGame(){
-        print(btnRetry.titleLabel?.text)
         if(state == "DÉMARRER"){
             if(counterTimer == nil){
                 startTimer();
