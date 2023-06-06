@@ -27,7 +27,8 @@ class JeuController: UIViewController {
     var customSettings = [String:String]()
     var maxCounterSeconds = 0
 
-    var difficulte = "Normal"
+    var difficulte = "moyen"
+    
     var wordChosen = ""
     
     var arrayOfWord: [String] = []
@@ -53,11 +54,7 @@ class JeuController: UIViewController {
         
         btnRetry.isHidden = false;
         
-        if(customSettings["time"] == "infini"){
-            countDirection = "Up";
-            counterSeconds = 0;
-        }
-        else if(customSettings["time"] == "30"){
+        if(customSettings["time"] == "30"){
             countDirection = "Down";
             maxCounterSeconds = 30
             counterMinutes = maxCounterSeconds / 60;
@@ -70,7 +67,8 @@ class JeuController: UIViewController {
             counterSeconds = maxCounterSeconds % 60;
         }
         else{
-            print("Erreur pour la valeur de maxCounterSeconds")
+            countDirection = "Up";
+            counterSeconds = 0;
         }
         
         counterLbl.text = "Timer : "+String(counterMinutes)+"m"+String(counterSeconds)+"s";
@@ -192,6 +190,7 @@ class JeuController: UIViewController {
         textAction.text = "Vous avez PERDU !";
         textEnd.text = "Le mot était : ";
         textWordEnd.text = wordChosen.uppercased();
+        textAction.textColor = UIColor.systemRed
         removeAllButtons();
         btnRetry.isHidden = false;
     }
@@ -256,17 +255,14 @@ class JeuController: UIViewController {
     }
     
     func getNewWord(){
-        if(difficulte == "Normal"){
+        if(customSettings["difficulty"] == "moyen"){
             wordChosen = JsonRead.readJSONFile();
             while wordChosen.count >= 9 {
                 wordChosen = JsonRead.readJSONFile();
             }
         }
-        else if(difficulte == "Difficile"){
-            wordChosen = JsonRead.readJSONFile();
-        }
         else{
-            print("Erreur variable de difficulte")
+            wordChosen = JsonRead.readJSONFile();
         }
     }
     
