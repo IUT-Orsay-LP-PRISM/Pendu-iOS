@@ -269,7 +269,7 @@ class JeuController: UIViewController {
             }
         }
         else{
-            wordChosen = "anticonstitutionnellement" // JsonRead.readJSONFile();
+            wordChosen = JsonRead.readJSONFile();
         }
     }
     
