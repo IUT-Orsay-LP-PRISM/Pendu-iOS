@@ -12,7 +12,6 @@ Jeu du pendu en langage Swift sur iOS - Projet de groupe pour la Licence Pro - P
 ### macOS
 - Clôner le projet, puis éxecuter le fichier .xcodeproj, à run sur un iPhone 13 Pro Max de préférence
 
-<hr>
 ## Images
 Quelques images du projet qui a pu être réalisé, pour ceux n'ayant pas de Mac :) 
 
@@ -27,4 +26,5 @@ Quelques images du projet qui a pu être réalisé, pour ceux n'ayant pas de Mac
 
 ### Partie personnalisée
 - Partie personnalisée permettant de choisir un chronomètre  montant ou descendant, et également le type de difficulté (difficile > 8 lettres mini.)
+
 ![perso](https://github.com/IUT-Orsay-LP-PRISM/Pendu-iOS/assets/31633046/1793de64-067f-4785-a3a5-0ec1f9682297)
