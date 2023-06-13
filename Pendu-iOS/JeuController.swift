@@ -42,9 +42,11 @@ class JeuController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        word.adjustsFontSizeToFitWidth
-        word.minimumScaleFactor = 0.5
-        word.numberOfLines = 1
+        word.contentMode = .scaleAspectFit
+        word.numberOfLines = 0
+        word.adjustsFontSizeToFitWidth = true
+
+
         
         getNewWord();
         
@@ -267,7 +269,7 @@ class JeuController: UIViewController {
             }
         }
         else{
-            wordChosen = JsonRead.readJSONFile();
+            wordChosen = "anticonstitutionnellement" // JsonRead.readJSONFile();
         }
     }
     
